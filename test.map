@@ -28,13 +28,13 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      00000006  l__HEADER |    00000007  l__HEADER |    00000008  l__HEADER
      0000000C  l__GSINIT |    00000013  l__HRAM   |    00000030  l__HEADER
      00000060  l__HEADER |    000000AB  l__HEADER |    00000200  s__CODE  
-     0000042E  l__INITIA |    0000042E  l__INITIA |    00000EA8  l__CODE_7
+     0000042E  l__INITIA |    0000042E  l__INITIA |    00000EC3  l__CODE_7
      00000EC6  l__CODE   |    000010C6  s__HOME   |    00001A38  l__DATA  
      00001AF2  l__HOME   |    00001F06  l__CODE_6 |    00002000  _rROMB0  
      00002912  l__CODE_5 |    00002BB8  s__BASE   |    00002BB8  s__CODE_0
      00002BB8  s__INITIA |    00002BB8  s__LIT    |    00002FE6  s__GSINIT
      00002FF2  s__GSFINA |    00003000  _rROMB1   |    000030D8  l__CODE_3
-     000035B9  l__CODE_4 |    00003946  l__CODE_1 |    00003B24  l__CODE_2
+     000035B9  l__CODE_4 |    00003945  l__CODE_1 |    00003B24  l__CODE_2
      00004000  _rMBC7_SR |    00004000  _rRAMB    |    00008000  __VRAM   
      00008000  __VRAM800 |    00008800  __VRAM880 |    00009000  __VRAM900
      00009800  __SCRN0   |    00009C00  __SCRN1   |    0000A000  __SRAM   
@@ -413,7 +413,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_7                00074000    00000EA8 =        3752. bytes (REL,CON)
+_CODE_7                00074000    00000EC3 =        3779. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -423,7 +423,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_1                00014000    00003946 =       14662. bytes (REL,CON)
+_CODE_1                00014000    00003945 =       14661. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -437,13 +437,13 @@ _CODE_1                00014000    00003946 =       14662. bytes (REL,CON)
      0001486C  _refresh_ |    00014947  _add_buil |    000149B7  _remove_b
      00014AB6  _rebuild_ |    00014DAD  _get_sub_ |    00014DBC  _reset_su
      00014DC1  _update_s |    000151F0  _sub_tool |    00015208  _is_area_
-     00015285  _plot_bui |    0001532D  _update_g |    000159B9  _update_s
-     000159C1  _draw_hud |    00015B91  _update_h |    00015D00  _move_lim
-     00015D49  _logo_scr |    00015FC5  _story_di |    000162D0  _move_cur
-     00016731  _force_cu |    0001674E  _trigger_ |    00016811  _trigger_
-     000168C7  _setup_st |    000169B9  _update_r |    00016C25  _cars_ini
-     00016C7B  _cars_upd |    0001705D  _tram_ini |    000170AA  _tram_upd
-     00017640  _boat_ini |    00017664  _boat_upd
+     00015285  _plot_bui |    0001532D  _update_g |    000159B8  _update_s
+     000159C0  _draw_hud |    00015B90  _update_h |    00015CFF  _move_lim
+     00015D48  _logo_scr |    00015FC4  _story_di |    000162CF  _move_cur
+     00016730  _force_cu |    0001674D  _trigger_ |    00016810  _trigger_
+     000168C6  _setup_st |    000169B8  _update_r |    00016C24  _cars_ini
+     00016C7A  _cars_upd |    0001705C  _tram_ini |    000170A9  _tram_upd
+     0001763F  _boat_ini |    00017663  _boat_upd
 ASxxxx Linker V03.00/V05.40 + sdld,  page 31.
 Hexadecimal  [32-Bits]
 

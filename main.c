@@ -587,6 +587,7 @@ void game_main(void) {
         uint8_t move_timer = 0;
         uint8_t hud_money_dirty = 0;
         uint8_t hud_throttle = 0;
+        uint8_t econ_was_running = 0;
         // (flags_step est global dans logic.c, pas besoin de déclaration locale)
         while (1) { // boucle de jeu
 
@@ -956,7 +957,11 @@ void game_main(void) {
                 }
             }
             if (flags_step >= 0) nb_refresh_flags_tick_b7();
-            call_update_economy_tick();
+            {
+                uint8_t econ_done = call_update_economy_tick();
+                if (econ_was_running && econ_done) hud_money_dirty = 1;
+                econ_was_running = !econ_done;
+            }
             wait_vbl_done();
         }
     }

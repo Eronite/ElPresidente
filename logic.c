@@ -677,8 +677,6 @@ void update_game_logic() { // ici les count_buildings sont ok
             game.month = 1;
             game.year++;
         }
-
-        update_hud();
     }
 
         //********************************************************************************
