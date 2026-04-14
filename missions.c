@@ -37,7 +37,7 @@ char *mission_strings_fr[] = {
     "Mission 3 termin~e !",
 
     // MTXT_M4_1
-    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la\ndiscoth~que reste silencieuse.\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai",
+    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la\ndiscoth~que reste silencieuse.\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai stocké",
     // MTXT_M4_2
     "Presidente ! Votre ile\nextrait, produit, ~claire !\nLe minerai se vend, les\ncaisses grossissent.\nViva el Presidente !",
     // MGOAL_M4_1
@@ -78,7 +78,7 @@ char *mission_strings_en[] = {
     "Mission 3 complete!",
 
     // MTXT_M4_1
-    "Presidente! Your island\nprospers, but lacks energy.\nWithout electricity, the\nmine cannot function.\nEven the disco stays\nsilent.\n\nYour objectives:\n- 1 power plant\n- 1 mine, on a deposit\n- 200 ore",
+    "Presidente! Your island\nprospers, but lacks energy.\nWithout electricity, the\nmine cannot function.\nEven the disco stays\nsilent.\n\nYour objectives:\n- 1 power plant\n- 1 mine, on a deposit\n- 200 ore in stock",
     // MTXT_M4_2
     "Presidente! Your island\nextracts, produces, shines!\nThe ore sells, the coffers\ngrow.\nViva el Presidente!",
     // MGOAL_M4_1

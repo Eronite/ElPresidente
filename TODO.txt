@@ -94,7 +94,11 @@ bug salaires qui reviennent à 0, seulement de temps en temps, et c'est quand on
 *
 ***********TODO :TEST LE FIX DES SALAIRES QUI SONT A 0 QD ON ETEINT LA GB ET RECHARGE UNE GAME (fix pas commit)
 
+pas de coupure entre texte de fin de mission et texte de debut de la mission d'apres ? 
 
+mission 2 : pour les bars dans les objectifs, on a "batiment" au lieu de bar (en Français, en anglais je sais pas)
+
+afficher les stocks : pour ore, food
 
 argent à 5077 en commencant le mode story
 et bonheur à 73 : mais faire commencer le bonheur à 50 dans tous les cas ? ça ne modifie pas l'équilibrage ?
