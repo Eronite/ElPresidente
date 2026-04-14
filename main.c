@@ -353,7 +353,11 @@ void nb_disable_sram_b7(void) __nonbanked {
 void nb_switch_ram_bank_b7(uint8_t bank) __nonbanked {
     SWITCH_ROM(1); switch_ram_bank(bank); SWITCH_ROM(7); }
 void nb_trigger_alert_b7(char* msg) __nonbanked {
-    SWITCH_ROM(1); trigger_alert(msg); SWITCH_ROM(7); }
+    char buf[21];
+    uint8_t i = 0;
+    while (i < 20 && msg[i]) { buf[i] = msg[i]; i++; }
+    buf[i] = 0;
+    SWITCH_ROM(1); trigger_alert(buf); SWITCH_ROM(7); }
 
 // Charge tous les assets initiaux depuis bank 3 (appelé depuis game_main() bank 7)
 void nb_load_all_assets_b7(void) __nonbanked {
