@@ -10,7 +10,7 @@
 // ============================================================
 char *mission_strings_fr[] = {
     // MTXT_M1_1
-    "Presidente, notre ancienne\nile a d| prendre sa retraite\nsuite a un l~ger d~saccord\ng~ologique.\nMais r~jouissez-vous ! Le\ng~n~reux Ronald Dump nous a\noffert ce lopin de terre.\nIl dit que la personne ~\nlaquelle elle appartenait\nn'en a plus besoin.\nVos objectifs :\n- 3 fermes\n- 6000 pesos\n- 25 habitants",
+    "Presidente, notre ancienne\nile a d| prendre sa retraite\nsuite a un l~ger d~saccord\ng~ologique.\nMais r~jouissez-vous ! Le\ng~n~reux Ronald Dump nous a\noffert ce lopin de terre.\nIl dit que la personne a\nlaquelle elle appartenait\nn'en a plus besoin.\n\nVos objectifs :\n- construire 3 fermes\n- obtenir 6000 dollars\n- avoir 25 habitants",
     // MTXT_M1_2
     "Magnifique, Presidente !\nVous avez prouv~ que la\ncivilisation est possible...\nm~me ici.\nViva el Presidente !",
     // MGOAL_M1_1
@@ -19,27 +19,27 @@ char *mission_strings_fr[] = {
     "Mission 1 termin~e !",
 
     // MTXT_M2_1
-    "Presidente ! Votre ~le\nmange, vos caisses sonnent.\nMais le peuple s'ennuie.\nUn peuple qui s'ennuie\npense. Et un peuple qui\npense, c'est dangereux.\nLa plantation produit de\nla culture. L'~glise\ndonne le bonheur.\nVos objectifs :\n- 1 plantation\n- 1 ~glise\n- 100 culture\n- Bonheur 60\n(Un bar aide pour le bonheur !)",
+    "Presidente ! Votre ile\nmange, vos caisses se remplissent.\nMais le peuple s'ennuie.\nEt un peuple qui s'ennuie\npense.\nL'~glise\ndonne le bonheur.\nEt le bar aussi, bien s|r.\n\nVos objectifs :\n- 1 ~glise\n- 2 bars\n- 8000 dollars",
     // MTXT_M2_2
-    "Presidente ! Votre peuple\nchante, prie, et boit.\nQue demander de plus ?\nViva el Presidente !",
+    "Presidente ! Votre peuple\nprie le matin et boit\nle soir. L'ordre r~gne.\nViva el Presidente !",
     // MGOAL_M2_1
-    "Culture + bonheur + b~timents",
+    "1 ~glise + 2 bars + 8000$",
     // MGOAL_M2_2
     "Mission 2 termin~e !",
 
     // MTXT_M3_1
-    "Presidente ! Votre peuple\nest heureux, mais peu\n~duqu~. Et peu surveill~.\nUn peuple ~duqu~ ob~it\nplus intelligemment.\nUn peuple surveill~ ob~it\ntout court.\nUn h~pital r~duit aussi\nles d~c~s inutiles.\nVos objectifs :\n- 1 ~cole\n- 1 h~pital\n- 1 commissariat\n- 50 habitants",
+    "Presidente ! Votre peuple\nest heureux, mais peu\n~duqu~. Et peu surveill~.\nUn peuple ~duqu~ ob~it\nplus intelligemment.\nUn peuple surveill~ ob~it\ntout court.\n\nVos objectifs :\n- 1 ~cole\n- 1 commissariat\n- 50 habitants",
     // MTXT_M3_2
-    "Magnifique Presidente !\n~ducation, sant~, ordre...\nvotre utopie prend forme.\nViva el Presidente !",
+    "Magnifique !\n~ducation, ordre...\nvotre utopie prend forme.\nViva el Presidente !",
     // MGOAL_M3_1
-    "B~timents + 50 habitants",
+    "1 ~cole + 2 postes de police + 50 habitants",
     // MGOAL_M3_2
     "Mission 3 termin~e !",
 
     // MTXT_M4_1
-    "Presidente ! Votre ~le\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la\ndiscoth~que reste silencieuse\n— et un peuple sans musique\nr~fl~chit trop.\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine (sur un gisement !)\n- 200 minerai",
+    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la\ndiscoth~que reste silencieuse.\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai",
     // MTXT_M4_2
-    "Presidente ! Votre ~le\nextrait, produit, ~claire !\nLe minerai se vend, les\ncaisses grossissent.\nViva el Presidente !",
+    "Presidente ! Votre ile\nextrait, produit, ~claire !\nLe minerai se vend, les\ncaisses grossissent.\nViva el Presidente !",
     // MGOAL_M4_1
     "Centrale + mine + 200 minerai",
     // MGOAL_M4_2
@@ -51,7 +51,7 @@ char *mission_strings_fr[] = {
 // ============================================================
 char *mission_strings_en[] = {
     // MTXT_M1_1
-    "Presidente, our old island\nhas retired due to a minor\ngeological disagreement.\nBut rejoice! The generous\nRonald Dump has gifted us\nthis patch of dirt.\nHe says the previous owner\nno longer needs it.\nYour objectives:\n- 3 farms\n- 6000 pesos\n- 25 inhabitants",
+    "Presidente, our old island\nhas retired due to a minor\ngeological disagreement.\nBut rejoice! The generous\nRonald Dump has gifted us\nthis patch of dirt.\nHe says the previous owner\nno longer needs it.\n\nYour objectives:\n- 3 farms\n- 6000 dollars\n- 25 inhabitants",
     // MTXT_M1_2
     "Magnificent, Presidente!\nYou have proven that\ncivilization is possible...\neven here.\nViva el Presidente!",
     // MGOAL_M1_1
@@ -60,25 +60,25 @@ char *mission_strings_en[] = {
     "Mission 1 complete!",
 
     // MTXT_M2_1
-    "Presidente! Your island\neats, your coffers ring.\nBut the people are bored.\nA bored people thinks.\nAnd a thinking people\nis dangerous.\nThe plantation makes culture.\nThe church brings happiness.\nYour objectives:\n- 1 plantation\n- 1 church\n- 100 culture\n- Happiness 60\n(A bar helps with happiness!)",
+    "Presidente! Your island\neats, your coffers ring.\nBut the people are bored.\nAnd a bored people thinks.\nDangerous.\nThe church brings happiness.\nAnd so does the bar,\nof course.\n\nYour objectives:\n- 1 church\n- 2 bars\n- 8000 dollars",
     // MTXT_M2_2
-    "Presidente! Your people\nsing, pray, and drink.\nWhat more could one ask?\nViva el Presidente!",
+    "Presidente! Your people\npray in the morning\nand drink at night.\nOrder is maintained.\nViva el Presidente!",
     // MGOAL_M2_1
-    "Culture + happiness + buildings",
+    "1 church + 2 bars + 8000$",
     // MGOAL_M2_2
     "Mission 2 complete!",
 
     // MTXT_M3_1
-    "Presidente! Your people\nare happy but poorly\neducated. And unsupervised.\nAn educated people obeys\nmore intelligently.\nA watched people obeys\nentirely.\nA hospital also reduces\nunnecessary deaths.\nYour objectives:\n- 1 school\n- 1 hospital\n- 1 police station\n- 50 inhabitants",
+    "Presidente! Your people\nare happy but poorly\neducated. And unsupervised.\nAn educated people obeys\nmore intelligently.\nA watched people obeys\nentirely.\n\nYour objectives:\n- 1 school\n- 2 police stations\n- 50 inhabitants",
     // MTXT_M3_2
-    "Magnificent Presidente!\nEducation, health, order...\nyour utopia takes shape.\nViva el Presidente!",
+    "Magnificent !\nEducation, order...\nyour utopia takes shape.\nViva el Presidente!",
     // MGOAL_M3_1
-    "Buildings + 50 inhabitants",
+    "1 school + 2 police stations + 50 inhabitants",
     // MGOAL_M3_2
     "Mission 3 complete!",
 
     // MTXT_M4_1
-    "Presidente! Your island\nprospers, but lacks energy.\nWithout electricity, the\nmine cannot function.\nEven the disco stays\nsilent — and a people\nwithout music thinks too much.\nYour objectives:\n- 1 power plant\n- 1 mine (on a deposit!)\n- 200 ore",
+    "Presidente! Your island\nprospers, but lacks energy.\nWithout electricity, the\nmine cannot function.\nEven the disco stays\nsilent.\n\nYour objectives:\n- 1 power plant\n- 1 mine, on a deposit\n- 200 ore",
     // MTXT_M4_2
     "Presidente! Your island\nextracts, produces, shines!\nThe ore sells, the coffers\ngrow.\nViva el Presidente!",
     // MGOAL_M4_1
@@ -102,12 +102,12 @@ MissionStep mission1[] = {
 };
 
 MissionStep mission2[] = {
-    {MTXT_M2_1, PORTRAIT_PENULTIMO, MGOAL_M2_1, 0, 0, 0, 0, 60, 0, 100, TILE_PLANTATION_NW, 1, TILE_CHURCH_NW, 1},
+    {MTXT_M2_1, PORTRAIT_PENULTIMO, MGOAL_M2_1, 8000, 0, 0, 0, 0, 0, 0, TILE_CHURCH_NW, 1, TILE_BAR_NW, 2},
     {MTXT_M2_2, PORTRAIT_PENULTIMO, MGOAL_M2_2, 0, 0, 0, 0,  0, 0,   0, 0,                  0, 0,              0},
 };
 
 MissionStep mission3[] = {
-    {MTXT_M3_1, PORTRAIT_PENULTIMO, MGOAL_M3_1, 0, 50, 0, 0, 0, 0, 0, TILE_SCHOOL_NW, 1, TILE_HOSPITAL_NW, 1},
+    {MTXT_M3_1, PORTRAIT_PENULTIMO, MGOAL_M3_1, 0, 50, 0, 0, 0, 0, 0, TILE_SCHOOL_NW, 1, TILE_POLICE_NW, 2},
     {MTXT_M3_2, PORTRAIT_PENULTIMO, MGOAL_M3_2, 0,  0, 0, 0, 0, 0, 0, 0,              0, 0,                0},
 };
 

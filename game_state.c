@@ -2,6 +2,7 @@
 #include "game_state.h"
 #include "constants.h"
 #include "graphics.h"
+#include "economy.h"
 
 // Initialisation des variables partagées
 GameState game;
@@ -97,6 +98,7 @@ void init_game_variables() {
     game.hap_buildings = 0;
     game.rev_mall = 0;
     game.rev_bar  = 0;
+    game.rev_wood = 0;
     game.monthly_revenue = 0;
     game.monthly_expenses = 0;
     game.last_month_profit = 0;
@@ -113,4 +115,6 @@ void init_game_variables() {
     building_count = 0;
     baraque_count  = 0;
     is_menu_open = 0;
+    call_update_economy_start();
+    while (!call_update_economy_tick()) {}
 }

@@ -258,11 +258,12 @@ void call_update_economy_start(void) __nonbanked {
     update_economy_start();
     SWITCH_ROM(1);
 }
-void call_update_economy_tick(void) __nonbanked {
+uint8_t call_update_economy_tick(void) __nonbanked {
     uint8_t saved = CURRENT_BANK;
     SWITCH_ROM(6);
-    update_economy_tick();
+    uint8_t done = update_economy_tick();
     SWITCH_ROM(saved);
+    return done;
 }
 
 // Wrappers nonbanked pour appels depuis economy.c (bank 3) vers bank 1

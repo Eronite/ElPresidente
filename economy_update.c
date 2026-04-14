@@ -123,6 +123,7 @@ void update_economy(void) {
     game.rev_rents      = 0;
     game.rev_mall       = 0;
     game.rev_bar        = 0;
+    game.rev_wood       = 0;
     game.exp_maintenance   = 0;
     game.exp_salaries      = 0;
     game.exp_construction  = 0;
@@ -322,11 +323,11 @@ void update_economy(void) {
                     } else if (f & BLDG_UPG1_APPLIED) {
                         uint16_t rev = (uint16_t)((uint32_t)50 * b->occupants / wj);
                         game.monthly_revenue += rev;
-                        game.rev_food += rev;
+                        game.rev_wood += rev;
                     } else {
                         uint16_t rev = (uint16_t)((uint32_t)30 * b->occupants / wj);
                         game.monthly_revenue += rev;
-                        game.rev_food += rev;
+                        game.rev_wood += rev;
                     }
                 }
                 break;

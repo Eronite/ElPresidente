@@ -5,3 +5,5 @@ Ne jamais compiler à ma place. C'est toujours moi qui lance le build (`make`, `
 
 ## Taille des banks
 Ne jamais chercher moi-même l'espace utilisé ou libre dans les banks (ne pas lancer `romusage`). Si j'ai besoin de savoir combien de place il reste dans une bank, demander à l'utilisateur. En revanche, je peux lire les fichiers `.map` pour savoir quelles fonctions/symboles sont placés dans quelle bank.
+
+Avant tout changement significatif (ajout de fonctions, de données, de strings, de logique conséquente), demander à l'utilisateur l'espace disponible dans la bank concernée avant de procéder à l'implémentation.

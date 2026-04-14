@@ -94,6 +94,14 @@ bug salaires qui reviennent à 0, seulement de temps en temps, et c'est quand on
 *
 ***********TODO :TEST LE FIX DES SALAIRES QUI SONT A 0 QD ON ETEINT LA GB ET RECHARGE UNE GAME (fix pas commit)
 
+
+
+argent à 5077 en commencant le mode story
+et bonheur à 73 : mais faire commencer le bonheur à 50 dans tous les cas ? ça ne modifie pas l'équilibrage ?
+******************************************************
+parfois quand on revient d'une alerte famine ou sans abri, le hud (selection des bâtiments) s'affiche sur une seule ligne (les icones sont tronquées), au lieu de s'afficher sur les 2 lignes du bas
+*****************************
+
 aclean178afterDecree> libréré bank 0 , et apparemment plus de bug préexistants (à vérifier), maintenant il faut faire de la place en bank 1 pour pouvoir implémenter : voir si on a déjà la prise en comtpe des revenus de la conserverie , du bar
 CORRIGER BUG message manque électricité ne s'affiche pas avec les bonnes tiles
 

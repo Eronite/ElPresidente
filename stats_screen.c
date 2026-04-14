@@ -11,6 +11,8 @@ extern void nb_story_get_current_step_b2(MissionStep *out);
 
 void stats_screen() {
 uint8_t stats_page = 0;
+uint8_t in_index   = 1;   // 1 = sous-menu index, 0 = page complète
+uint8_t cursor_pos = 0;   // position curseur dans l'index (0-6)
 uint8_t menu_running = 1;
 uint8_t redraw = 1;
 uint8_t joy;
@@ -23,6 +25,17 @@ uint8_t nb_of_houses = 0, nb_of_farms = 0;
     else if (building_registry[ri].type == TILE_FARM_NW) nb_of_farms++;
 } }
 
+const char *index_titles[7] = {
+    "G~n~ral",
+    "Social",
+    "Revenus",
+    "Mission",
+    "Electricit~",
+    "D~penses",
+    "Bonheur"
+};
+const uint8_t index_to_page[7] = {0, 1, 2, 4, 5, 6, 7};
+
 clear_entire_window();
 nb_draw_menu_border();
 draw_text(1, 16, GET_TEXT(TXT_PAGE_NAV), 1);
@@ -34,7 +47,16 @@ while (menu_running) {
         // Effacer les sprites de coche (slots 1-7) à chaque changement de page
         { uint8_t si; for (si = 1u; si <= 7u; si++) move_sprite(si, 0u, 0u); }
 
-        if (stats_page == 0) { // --- PAGE 1 : GENERAL ---
+        if (in_index == 1) { // --- SOUS-MENU INDEX ---
+            draw_text(5, 1, "Almanach", 1);
+            uint8_t irow;
+            for (irow = 0; irow < 7; irow++) {
+                uint8_t y = 3 + irow * 2;
+                if (irow == cursor_pos) draw_text(1, y, ">", 1);
+                draw_text(3, y, (char*)index_titles[irow], 1);
+            }
+        }
+        else if (stats_page == 0) { // --- PAGE 1 : GENERAL ---
             if (game.language == LANG_EN) {
                 draw_text(6, 1, "General", 1);
                 draw_text(1, 5, GET_TEXT(TXT_STATS_DATE), 1);
@@ -49,16 +71,16 @@ while (menu_running) {
                 draw_number(12, 11, (game.money > 999999L ? 999999L : game.money), 1);
             } else {
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-                draw_text(6, 1, GET_TEXT(TXT_STATS_GENERAL), 1);
+                draw_text(6, 1, "G~n~ral", 1);
                 draw_text(1, 5, GET_TEXT(TXT_STATS_DATE), 1);
                 { uint8_t mo = game.month; char mm[3]; mm[0]='0'+mo/10; mm[1]='0'+mo%10; mm[2]='\0'; draw_text(12, 5, mm, 1); }
                 draw_text(14, 5, "/", 1);
                 draw_number(15, 5, game.year, 1);
                 draw_text(1, 7, GET_TEXT(TXT_STATS_POPULATION), 1);
                 draw_number(12, 7, game.population, 1);
-                            draw_text(1, 9, GET_TEXT(TXT_STATS_HAPPINESS), 1);
+                            draw_text(1, 9, "Bonheur : ", 1);
                 draw_number(12, 9, game.avg_happiness, 1);
-                draw_text(1, 11, GET_TEXT(TXT_STATS_MONEY), 1);
+                draw_text(1, 11, "Argent :", 1);
                 draw_number(12, 11, (game.money > 999999L ? 999999L : game.money), 1);
             }
         }
@@ -97,9 +119,9 @@ while (menu_running) {
                         //draw_text(1, 13, "food stock :", 1);
             //draw_number(12, 13, game.foodStock, 1);
         }
-        else if (stats_page == 2) { // --- PAGE 3 : ECONOMIE ---
-            draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(6, 2, GET_TEXT(TXT_STATS_ECONOMY), 1);
+        else if (stats_page == 2) { // --- PAGE 3 
+            /*draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(6, 1, GET_TEXT(TXT_STATS_ECONOMY), 1);
             draw_text(1, 5, GET_TEXT(TXT_STATS_MONTHLY_EXPENSE), 1);
             draw_number(15, 5, (uint16_t)game.monthly_expenses, 1);
             draw_text(1, 7, GET_TEXT(TXT_STATS_MONTHLY_PROFIT), 1);
@@ -115,9 +137,29 @@ while (menu_running) {
             draw_text(1, 11, "total unemployed :", 1);
             draw_number(15, 12, game.total_unemployed, 1);
                         draw_text(1, 13, "chomage pctg :", 1);
-            draw_number(12, 14, game.unemployment_rate, 1);
+            draw_number(12, 14, game.unemployment_rate, 1);*/
+                        //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(4, 1, "Revenus 1/2", 1);
+            draw_text(1, 4, "loyers :", 1);
+            draw_number(15, 4, game.rev_rents, 1);
+            draw_text(1, 6, "food :", 1);
+            draw_number(15, 6, game.rev_food, 1);
+            draw_text(1, 8, "minerai :", 1);
+            draw_number(15, 8, game.rev_ore, 1);
+            draw_text(1, 10, "culture :", 1);
+            draw_number(15, 10, game.rev_culture, 1);
         }
-        else if (stats_page == 3) { // --- PAGE 4 : MISSIONS ---
+        else if (stats_page == 3) { // --- PAGE 8 : REVENUS 2/2 ---
+            //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(4, 1, "Revenus 2/2", 1);
+            draw_text(1, 4, "bar :", 1);
+            draw_number(15, 4, game.rev_bar, 1);
+            draw_text(1, 6, "magasin :", 1);
+            draw_number(15, 6, game.rev_mall, 1);
+            draw_text(1, 8, "conserverie :", 1);
+            draw_number(15, 8, game.rev_wood, 1);
+        }
+        else if (stats_page == 4) { // --- PAGE 4 : MISSIONS ---
             restore_shop_tiles(); // recharge cursor_data en tile sprite 0 (écrasée par fleche)
             draw_text(6, 1, GET_TEXT(TXT_STATS_MISSION), 1);
             if (game.game_mode == MODE_STORY && game.mission_id >= 4) {
@@ -278,27 +320,27 @@ while (menu_running) {
             }
         }
 
-        else if (stats_page == 4) { // --- PAGE 5 : NOMBRE DE BATIMENTS ---
+        /*else if (stats_page == 4) { // --- PAGE 5 : NOMBRE DE BATIMENTS ---
             draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
             draw_text(6, 2, "nb batiments", 1);
             draw_text(1, 5, "nb de farm", 1);
             draw_number(15, 5, nb_of_farms, 1);
             draw_text(1, 7, "nb de house", 1);
             draw_number(15, 7, nb_of_houses, 1);
-        }
+        }*/
 
         else if (stats_page == 5) { // --- PAGE 6 ---
-            draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(6, 2, "~lectricit~", 1);
+            //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(5, 1, "Electricit~", 1);
             draw_text(1, 5, "produite :", 1);
             draw_number(15, 5, game.electricity_prod, 1);
             draw_text(1, 7, "consomm~e :", 1);
             draw_number(15, 7, game.electricity_cons, 1);
         }
 
-        else if (stats_page == 6) { // --- PAGE 7 : REVENUS ---
+        /*else if (stats_page == 6) { // --- PAGE 7 : REVENUS 1/2 ---
             draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(5, 2, "revenus", 1);
+            draw_text(3, 2, "revenus (1/2)", 1);
             draw_text(1, 4, "loyers :", 1);
             draw_number(15, 4, game.rev_rents, 1);
             draw_text(1, 6, "food :", 1);
@@ -307,15 +349,22 @@ while (menu_running) {
             draw_number(15, 8, game.rev_ore, 1);
             draw_text(1, 10, "culture :", 1);
             draw_number(15, 10, game.rev_culture, 1);
-            draw_text(1, 12, "magasin :", 1);
-            draw_number(15, 12, game.rev_mall, 1);
-            draw_text(1, 14, "bar :", 1);
-            draw_number(15, 14, game.rev_bar, 1);
-        }
+        }*/
 
-        else if (stats_page == 7) { // --- PAGE 8 : DEPENSES ---
+        /*else if (stats_page == 7) { // --- PAGE 8 : REVENUS 2/2 ---
             draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(5, 2, "d~penses", 1);
+            draw_text(3, 2, "revenus (2/2)", 1);
+            draw_text(1, 4, "bar :", 1);
+            draw_number(15, 4, game.rev_bar, 1);
+            draw_text(1, 6, "magasin :", 1);
+            draw_number(15, 6, game.rev_mall, 1);
+            draw_text(1, 8, "conserverie :", 1);
+            draw_number(15, 8, game.rev_wood, 1);
+        }*/
+
+        else if (stats_page == 6) { // --- PAGE 9 : DEPENSES ---
+            //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(5, 1, "D~penses", 1);
             draw_text(1, 5, "maintenance :", 1);
             draw_number(15, 5, game.exp_maintenance, 1);
             draw_text(1, 7, "salaires :", 1);
@@ -333,9 +382,9 @@ while (menu_running) {
             }
         }
 
-        else if (stats_page == 8) { // --- PAGE 9 : FACTEURS BONHEUR 1 ---
-            draw_text(6, 1, "Facteurs bonheur", 1);
-            draw_text(4, 2, "bonheur (1/2)", 1);
+        else if (stats_page == 7) { // --- PAGE 10 : FACTEURS BONHEUR 1 ---
+            draw_text(2, 1, "Facteurs bonheur", 1);
+            draw_text(6, 2, "1/2", 1);
             // Batiments (hap_d stocké directement depuis economy.c)
             {
                 int16_t bldg_hap = game.hap_buildings;
@@ -375,9 +424,9 @@ while (menu_running) {
             }
         }
 
-        else if (stats_page == 9) { // --- PAGE 10 : FACTEURS BONHEUR 2 ---
-            draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(4, 2, "bonheur (2/2)", 1);
+        else if (stats_page == 8) { // --- PAGE 11 : FACTEURS BONHEUR 2 ---
+            draw_text(2, 1, "Facteurs bonheur", 1);
+            draw_text(6, 2, "2/2", 1);
             // Sante
             {
                 int8_t v = game.health_hap_bonus;
@@ -408,25 +457,33 @@ while (menu_running) {
 
     joy = joypad();
 
-    if (joy & J_B) {
-        menu_running = 0;
-        waitpadup();
-    }
-
-    if (joy & J_RIGHT) {
-        stats_page++;
-        if(stats_page > 9) stats_page = 0;
-        nb_play_sound_build_b4();
-        redraw = 1; // On demande de redessiner
-        waitpadup();
-    }
-
-    if (joy & J_LEFT) {
-        if(stats_page == 0) stats_page = 9;
-        else stats_page--;
-        nb_play_sound_build_b4();
-        redraw = 1; // On demande de redessiner
-        waitpadup();
+    if (in_index == 1) {
+        if (joy & J_B) { menu_running = 0; waitpadup(); }
+        if (joy & J_DOWN) {
+            cursor_pos++;
+            if (cursor_pos >= 7) cursor_pos = 0;
+            nb_play_sound_build_b4(); redraw = 1; waitpadup();
+        }
+        if (joy & J_UP) {
+            if (cursor_pos == 0) cursor_pos = 6;
+            else cursor_pos--;
+            nb_play_sound_build_b4(); redraw = 1; waitpadup();
+        }
+        if (joy & J_A) {
+            stats_page = index_to_page[cursor_pos];
+            in_index = 0; redraw = 1; waitpadup();
+        }
+    } else {
+        // page complète
+        if (joy & J_B) { in_index = 1; redraw = 1; waitpadup(); }
+        if (joy & J_RIGHT) {
+            if (stats_page == 2) { stats_page = 3; nb_play_sound_build_b4(); redraw = 1; waitpadup(); }
+            else if (stats_page == 7) { stats_page = 8; nb_play_sound_build_b4(); redraw = 1; waitpadup(); }
+        }
+        if (joy & J_LEFT) {
+            if (stats_page == 3) { stats_page = 2; nb_play_sound_build_b4(); redraw = 1; waitpadup(); }
+            else if (stats_page == 8) { stats_page = 7; nb_play_sound_build_b4(); redraw = 1; waitpadup(); }
+        }
     }
 
     wait_vbl_done();

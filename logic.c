@@ -1227,6 +1227,9 @@ void setup_story_params(uint8_t mission_id, uint8_t text_y) {
     // pour que le fade_out de main.c efface un écran blanc propre, pas le texte de Penultimo
     clear_entire_window();
 
+    // Initialise homeless et les stats dès le départ (sinon reste à 0 jusqu'au 1er tick mensuel)
+    call_update_economy_start();
+    while (!call_update_economy_tick()) {}
 }
 
 

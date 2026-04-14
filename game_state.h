@@ -43,6 +43,7 @@ typedef struct {
     uint16_t rev_rents;       // revenus loyers
     uint16_t rev_mall;        // revenus magasin
     uint16_t rev_bar;         // revenus bar
+    uint16_t rev_wood;        // revenus conserverie (bois vendu)
     uint16_t exp_maintenance;   // dépenses maintenance
     uint16_t exp_salaries;      // dépenses salaires
     uint16_t exp_construction;  // dépenses construction ce mois
