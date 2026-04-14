@@ -34,7 +34,7 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      00002912  l__CODE_5 |    00002BB8  s__BASE   |    00002BB8  s__CODE_0
      00002BB8  s__INITIA |    00002BB8  s__LIT    |    00002FE6  s__GSINIT
      00002FF2  s__GSFINA |    00003000  _rROMB1   |    000030D8  l__CODE_3
-     000035AD  l__CODE_4 |    00003946  l__CODE_1 |    00003B24  l__CODE_2
+     000035B9  l__CODE_4 |    00003946  l__CODE_1 |    00003B24  l__CODE_2
      00004000  _rMBC7_SR |    00004000  _rRAMB    |    00008000  __VRAM   
      00008000  __VRAM800 |    00008800  __VRAM880 |    00009000  __VRAM900
      00009800  __SCRN0   |    00009C00  __SCRN1   |    0000A000  __SRAM   
@@ -518,7 +518,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_4                00044000    000035AD =       13741. bytes (REL,CON)
+_CODE_4                00044000    000035B9 =       13753. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    

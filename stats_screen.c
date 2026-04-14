@@ -59,11 +59,11 @@ while (menu_running) {
         else if (stats_page == 0) { // --- PAGE 1 : GENERAL ---
             if (game.language == LANG_EN) {
                 draw_text(6, 1, "General", 1);
-                draw_text(1, 5, GET_TEXT(TXT_STATS_DATE), 1);
+                draw_text(1, 5, "Date :", 1);
                 { uint8_t mo = game.month; char mm[3]; mm[0]='0'+mo/10; mm[1]='0'+mo%10; mm[2]='\0'; draw_text(12, 5, mm, 1); }
                 draw_text(14, 5, "/", 1);
                 draw_number(15, 5, game.year, 1);
-                draw_text(1, 7, GET_TEXT(TXT_STATS_POPULATION), 1);
+                draw_text(1, 7, "Population :", 1);
                 draw_number(12, 7, game.population, 1);
                             draw_text(1, 9, "Happiness :", 1);
                 draw_number(12, 9, game.avg_happiness, 1);
@@ -72,11 +72,11 @@ while (menu_running) {
             } else {
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
                 draw_text(6, 1, "G~n~ral", 1);
-                draw_text(1, 5, GET_TEXT(TXT_STATS_DATE), 1);
+                draw_text(1, 5, "Date :", 1);
                 { uint8_t mo = game.month; char mm[3]; mm[0]='0'+mo/10; mm[1]='0'+mo%10; mm[2]='\0'; draw_text(12, 5, mm, 1); }
                 draw_text(14, 5, "/", 1);
                 draw_number(15, 5, game.year, 1);
-                draw_text(1, 7, GET_TEXT(TXT_STATS_POPULATION), 1);
+                draw_text(1, 7, "Population :", 1);
                 draw_number(12, 7, game.population, 1);
                             draw_text(1, 9, "Bonheur : ", 1);
                 draw_number(12, 9, game.avg_happiness, 1);
