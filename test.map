@@ -30,11 +30,11 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      00000060  l__HEADER |    000000AB  l__HEADER |    00000200  s__CODE  
      0000042E  l__INITIA |    0000042E  l__INITIA |    00000EA8  l__CODE_7
      00000EC6  l__CODE   |    000010C6  s__HOME   |    00001A38  l__DATA  
-     00001AF2  l__HOME   |    00001EBA  l__CODE_6 |    00002000  _rROMB0  
-     00002901  l__CODE_5 |    00002BB8  s__BASE   |    00002BB8  s__CODE_0
+     00001AF2  l__HOME   |    00001F06  l__CODE_6 |    00002000  _rROMB0  
+     00002912  l__CODE_5 |    00002BB8  s__BASE   |    00002BB8  s__CODE_0
      00002BB8  s__INITIA |    00002BB8  s__LIT    |    00002FE6  s__GSINIT
      00002FF2  s__GSFINA |    00003000  _rROMB1   |    000030D8  l__CODE_3
-     000035B1  l__CODE_4 |    00003946  l__CODE_1 |    00003B24  l__CODE_2
+     000035AD  l__CODE_4 |    00003946  l__CODE_1 |    00003B24  l__CODE_2
      00004000  _rMBC7_SR |    00004000  _rRAMB    |    00008000  __VRAM   
      00008000  __VRAM800 |    00008800  __VRAM880 |    00009000  __VRAM900
      00009800  __SCRN0   |    00009C00  __SCRN1   |    0000A000  __SRAM   
@@ -483,7 +483,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_5                00054000    00002901 =       10497. bytes (REL,CON)
+_CODE_5                00054000    00002912 =       10514. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -493,7 +493,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_6                00064000    00001EBA =        7866. bytes (REL,CON)
+_CODE_6                00064000    00001F06 =        7942. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -518,7 +518,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_4                00044000    000035B1 =       13745. bytes (REL,CON)
+_CODE_4                00044000    000035AD =       13741. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    

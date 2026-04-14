@@ -453,10 +453,25 @@ uint8_t update_economy_tick(void) {
             game.total_unemployed = 0; game.unemployment_rate = 0;
         }
 
-        game.homeless = (game.population > s_housing_cap) ? game.population - s_housing_cap : 0;
-        if (game.decree_housing && game.homeless > 0) {
-            uint16_t reduction = game.population / 5; // -20% de la population
-            game.homeless = (game.homeless > reduction) ? game.homeless - reduction : 0;
+        {
+            uint8_t prev_homeless = game.homeless;
+            game.homeless = (game.population > s_housing_cap) ? game.population - s_housing_cap : 0;
+            if (game.decree_housing) {
+                uint8_t floor = game.population / 10;
+                if (game.homeless > floor) {
+                    uint8_t reduction = game.homeless * 15 / 100;
+                    if (reduction == 0) reduction = 1;
+                    game.homeless -= reduction;
+                    if (game.homeless < floor) game.homeless = floor;
+                }
+                if (game.homeless > prev_homeless) {
+                    uint8_t dec = prev_homeless / 10;
+                    if (dec == 0) dec = 1;
+                    uint8_t reduced = prev_homeless - dec;
+                    if (reduced < floor) reduced = floor;
+                    game.homeless = reduced;
+                }
+            }
         }
         int16_t homeless_pen = 0;
         if (game.homeless > 0 && game.population > 0) {

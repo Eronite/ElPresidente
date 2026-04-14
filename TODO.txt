@@ -91,11 +91,30 @@ espace apres discotheque ou silencieuse
 premier dialogue : à (é)
 ************************************
 bug salaires qui reviennent à 0, seulement de temps en temps, et c'est quand on éteint la console et qu'on la rallume (pas quand on quitte vers le menu principal et qu'on revient)
-*
+
+
+
+************************************
+************************************
+************************************
+
+ENLEVER TOUS GET TEXT DES MENUS : est-ce que c'est pour ça qu'on a des tiles corromues ... i hope
+
+************************************
+************************************
+************************************
+
+
 
 sur upgrade : enlever le b retour
 
-un upgrade de maison pour doubler le nd de habitants
+un upgrade de maison pour doubler le nd de habitants : NON ON A DEJA HOUSING FOR ALL POUR 1500 balles par mois, mais par contre les sans abris continuent d'augmenter meme avec ce décrets ,en late game, donc à corriger
+
+revenus de bar magasin et conserverie : toujours à 0 ?
+
+l'argent ne se pa toujours  à jour dans le hud (mais dans le menu alamanach, oui)
+
+en ate game j'ai 100 de bonheur mais 76 homeless et 44 unempoyment, donc quand on a des homeless et unemploymeent, il faut qu'on ne dépasse pas genre 80 de bonheur
 
 une loupe pour voir le nb d'eployés (changements de tiles en fonction du batiment)
 
