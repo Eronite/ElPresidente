@@ -92,6 +92,20 @@ premier dialogue : à (é)
 ************************************
 bug salaires qui reviennent à 0, seulement de temps en temps, et c'est quand on éteint la console et qu'on la rallume (pas quand on quitte vers le menu principal et qu'on revient)
 *
+
+sur upgrade : enlever le b retour
+
+un upgrade de maison pour doubler le nd de habitants
+
+une loupe pour voir le nb d'eployés (changements de tiles en fonction du batiment)
+
+sur la page social : unemployment : bug des tiles : IL FAUT DELETE TOUS LES GET TEXT DANS LES MENUS
+
+la crissance est trop exponetielle quand le bonheur est haut en late game, on peut construire assez de logements : voir comment la croissance fonctionne et tempérer (+ autre sujet dit ailleurs : upgrade de house qui double le nombre de logements)
+
+UN EMNU POUR SETTER TOUS LES SALAIRES PAR TYPE DE BATIMENT
+
+SUPPRIMER LE CURSEUR QUAND ON OUVRE LE MENU INFOS UPGRADES : le probleme apparait unqiement quand on est en bas de la map (sinon le curseur reste au dessus
 ***********TODO :TEST LE FIX DES SALAIRES QUI SONT A 0 QD ON ETEINT LA GB ET RECHARGE UNE GAME (fix pas commit)
 
 pas de coupure entre texte de fin de mission et texte de debut de la mission d'apres ? 

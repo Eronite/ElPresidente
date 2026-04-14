@@ -87,7 +87,7 @@ while (menu_running) {
         else if (stats_page == 1) { // --- PAGE 2 : SOCIAL ---
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
             if (game.language == LANG_EN) {
-            draw_text(6, 1, GET_TEXT(TXT_STATS_SOCIAL), 1);
+            draw_text(6, 1, "Social", 1);
             draw_text(1, 5, "Homeless :", 1);
             draw_number(15, 5, game.homeless, 1);
 
@@ -97,7 +97,7 @@ while (menu_running) {
             draw_text(1, 9, "Unemployment :", 1);
             draw_number(15, 9, game.unemployment_rate, 1);
             } else {
-                draw_text(6, 1, GET_TEXT(TXT_STATS_SOCIAL), 1);
+                draw_text(6, 1, "Social", 1);
                 draw_text(1, 5, "Sans abris :", 1);
                 draw_number(15, 5, game.homeless, 1);
 
