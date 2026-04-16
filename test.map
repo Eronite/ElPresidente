@@ -34,7 +34,7 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      00002890  l__CODE_7 |    000028E9  l__CODE_5 |    00002C0A  s__BASE  
      00002C0A  s__CODE_0 |    00002C0A  s__INITIA |    00002C0A  s__LIT   
      00003000  _rROMB1   |    00003060  s__GSINIT |    0000306C  s__GSFINA
-     000030F9  l__CODE_3 |    00003967  l__CODE_1 |    00003BB2  l__CODE_2
+     000030F9  l__CODE_3 |    00003967  l__CODE_1 |    00003BB6  l__CODE_2
      00004000  _rMBC7_SR |    00004000  _rRAMB    |    00008000  __VRAM   
      00008000  __VRAM800 |    00008800  __VRAM880 |    00009000  __VRAM900
      00009800  __SCRN0   |    00009C00  __SCRN1   |    0000A000  __SRAM   
@@ -506,7 +506,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_2                00024000    00003BB2 =       15282. bytes (REL,CON)
+_CODE_2                00024000    00003BB6 =       15286. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -515,7 +515,7 @@ _CODE_2                00024000    00003BB2 =       15282. bytes (REL,CON)
      0002521E  _pause_me |    0002566C  _confirm_ |    00025806  _story_su
      00025B17  _language |    00025BFF  _init_lan |    00025C06  _get_text
      0002722C  _intro_bu |    0002762C  _generate |    000276FB  _display_
-     000277F8  _intro_ti |    0002798F  _show_min
+     000277F8  _intro_ti |    00027993  _show_min
 ASxxxx Linker V03.00/V05.40 + sdld,  page 35.
 Hexadecimal  [32-Bits]
 

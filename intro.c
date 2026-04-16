@@ -370,10 +370,11 @@ void intro_title_animation(void) {
             }
         }
 
-        if (joypad() & J_START) break;
+        //if (joypad() & J_START) break;
+        if (joypad() & (J_START | J_A)) break;
         wait_vbl_done();
     }
-
+    waitpadup(); 
 
     // --- NETTOYAGE POST-INTRO ---
 
