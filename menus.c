@@ -44,21 +44,21 @@ void main_menu() {
 
         if (game.language == LANG_EN) {
 
-            draw_text(5, 10, "Story", 1);
-            draw_text(5, 12, "Free play", 1);
+            draw_text(5, 8, "Story", 1);
+            draw_text(5, 10, "Free play", 1);
             SHOW_WIN; SHOW_SPRITES; DISPLAY_ON;
 
             if (++blink_counter >= 30) blink_counter = 0;
-            if (blink_counter < 15) move_sprite(0, 32, (selection == 0) ? 96 : 112);
+            if (blink_counter < 15) move_sprite(0, 32, (selection == 0) ? 80 : 96);
             else move_sprite(0, 0, 0);
         } else {
 
-            draw_text(4, 10, "Histoire", 1);
-            draw_text(4, 12, "Jeu libre", 1);
+            draw_text(5, 8, "Histoire", 1);
+            draw_text(5, 10, "Jeu libre", 1);
             SHOW_WIN; SHOW_SPRITES; DISPLAY_ON;
 
             if (++blink_counter >= 30) blink_counter = 0;
-            if (blink_counter < 15) move_sprite(0, 24, (selection == 0) ? 96 : 112);
+            if (blink_counter < 15) move_sprite(0, 32, (selection == 0) ? 80 : 96);
             else move_sprite(0, 0, 0);
         }
 
@@ -336,13 +336,13 @@ uint8_t story_sub_menu() {
 
     if (game.language == LANG_EN) {
 
-        draw_text(5, 10, "New game", 1);
-        draw_text(5, 12, "Continue", 1);
+        draw_text(5, 8, "New game", 1);
+        draw_text(5, 10, "Continue", 1);
         draw_text(5, 15, "B : back", 1);
     } else {
 
-        draw_text(3, 10, "Nouvelle partie", 1);
-        draw_text(3, 12, "Continuer", 1);
+        draw_text(3, 8, "Nouvelle partie", 1);
+        draw_text(3, 10, "Continuer", 1);
         draw_text(3, 15, "B : retour", 1);
     }
 
@@ -352,7 +352,7 @@ uint8_t story_sub_menu() {
         uint8_t joy = joypad();
 
         if (++blink_counter >= 30) blink_counter = 0;
-        uint8_t curs_y_pos = ((10 + (selection * 2)) * 8) + 16;
+        uint8_t curs_y_pos = ((8 + (selection * 2)) * 8) + 16;
         if (game.language == LANG_EN) {
             if (blink_counter < 15) {
                 move_sprite(0, 32, curs_y_pos);

@@ -12,7 +12,7 @@ char *mission_strings_fr[] = {
     // MTXT_M1_1
     "Presidente, notre ancienne\nile a d| prendre sa retraite\nsuite a un l~ger d~saccord\ng~ologique.\nMais r~jouissez-vous ! Le\ng~n~reux Ronald Dump nous a\noffert ce lopin de terre.\nIl dit que la personne a\nlaquelle elle appartenait\nn'en a plus besoin.\n\nVos objectifs :\n- construire 3 fermes\n- obtenir 6000 dollars\n- avoir 25 habitants",
     // MTXT_M1_2
-    "Magnifique, Presidente !\nVous avez prouv~ que la\ncivilisation est possible...\nm~me ici.\nViva el Presidente !",
+    "Magnifique, Presidente !\nVous avez prouv~ que la\ncivilisation est possible...\nm~me ici.",
     // MGOAL_M1_1
     "3 fermes + 6000$ + 25 hab",
     // MGOAL_M1_2
@@ -21,14 +21,14 @@ char *mission_strings_fr[] = {
     // MTXT_M2_1
     "Presidente ! Votre ile\nmange, vos caisses se remplissent.\nMais le peuple s'ennuie.\nEt un peuple qui s'ennuie\npense.\nL'~glise\ndonne le bonheur.\nEt le bar aussi, bien s|r.\n\nVos objectifs :\n- 1 ~glise\n- 2 bars\n- 8000 dollars",
     // MTXT_M2_2
-    "Presidente ! Votre peuple\nprie le matin et boit\nle soir. L'ordre r~gne.\nViva el Presidente !",
+    "Presidente ! Votre peuple\nprie le matin et boit le soir. L'ordre r~gne.\nViva el Presidente !",
     // MGOAL_M2_1
     "1 ~glise + 2 bars + 8000$",
     // MGOAL_M2_2
     "Mission 2 termin~e !",
 
     // MTXT_M3_1
-    "Presidente ! Votre peuple\nest heureux, mais peu\n~duqu~. Et peu surveill~.\nUn peuple ~duqu~ ob~it\nplus intelligemment.\nUn peuple surveill~ ob~it\ntout court.\n\nVos objectifs :\n- 1 ~cole\n- 1 commissariat\n- 50 habitants",
+    "Presidente ! Votre peuple\nest heureux, mais peu ~duqu~.\nEt peu surveill~.\nUn peuple ~duqu~ ob~it plus\nintelligemment.\nUn peuple surveill~ ob~it\ntout court.\n\nVos objectifs :\n- 1 ~cole\n- 1 commissariat\n- 50 habitants",
     // MTXT_M3_2
     "Magnifique !\n~ducation, ordre...\nvotre utopie prend forme.\nViva el Presidente !",
     // MGOAL_M3_1
@@ -37,9 +37,9 @@ char *mission_strings_fr[] = {
     "Mission 3 termin~e !",
 
     // MTXT_M4_1
-    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la\ndiscoth~que reste silencieuse.\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai stocké",
+    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la discoth~que\nreste silencieuse.\n\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai stock~",
     // MTXT_M4_2
-    "Presidente ! Votre ile\nextrait, produit, ~claire !\nLe minerai se vend, les\ncaisses grossissent.\nViva el Presidente !",
+    "Presidente ! Votre ile\nextrait, produit, ~claire !\nLe minerai se vend, les caisses\ngrossissent.\nViva el Presidente !",
     // MGOAL_M4_1
     "Centrale + mine + 200 minerai",
     // MGOAL_M4_2
@@ -53,7 +53,7 @@ char *mission_strings_en[] = {
     // MTXT_M1_1
     "Presidente, our old island\nhas retired due to a minor\ngeological disagreement.\nBut rejoice! The generous\nRonald Dump has gifted us\nthis patch of dirt.\nHe says the previous owner\nno longer needs it.\n\nYour objectives:\n- 3 farms\n- 6000 dollars\n- 25 inhabitants",
     // MTXT_M1_2
-    "Magnificent, Presidente!\nYou have proven that\ncivilization is possible...\neven here.\nViva el Presidente!",
+    "Magnificent, Presidente!\nYou have proven that\ncivilization is possible...\neven here.",
     // MGOAL_M1_1
     "3 farms + 6000$ + 25 inhab",
     // MGOAL_M1_2
