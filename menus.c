@@ -44,8 +44,8 @@ void main_menu() {
 
         if (game.language == LANG_EN) {
 
-            draw_text(5, 10, GET_TEXT(TXT_STORY), 1);
-            draw_text(5, 12, GET_TEXT(TXT_FREEPLAY), 1);
+            draw_text(5, 10, "Story", 1);
+            draw_text(5, 12, "Free play", 1);
             SHOW_WIN; SHOW_SPRITES; DISPLAY_ON;
 
             if (++blink_counter >= 30) blink_counter = 0;
@@ -53,8 +53,8 @@ void main_menu() {
             else move_sprite(0, 0, 0);
         } else {
 
-            draw_text(4, 10, GET_TEXT(TXT_STORY), 1);
-            draw_text(4, 12, GET_TEXT(TXT_FREEPLAY), 1);
+            draw_text(4, 10, "Histoire", 1);
+            draw_text(4, 12, "Jeu libre", 1);
             SHOW_WIN; SHOW_SPRITES; DISPLAY_ON;
 
             if (++blink_counter >= 30) blink_counter = 0;
@@ -124,7 +124,7 @@ void pause_menu() {
     move_win(7, 0); 
     
     // Nettoyage de l'écran de pause (tuiles vides)
-    uint8_t blank_row[20] = {0};
+    static const uint8_t blank_row[20] = {0};
     for(uint8_t i=0; i<18; i++) set_win_tiles(0, i, 20, 1, blank_row);
 
     // On cache les sprites 0 s'il sont utilisés
@@ -141,24 +141,24 @@ void pause_menu() {
 
         if (game.language == LANG_EN) {
 
-            draw_text(5, 5, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(5, 5, "Almanach", 1);
             draw_text(5, 7, "Decrees", 1);
             draw_text(5, 9, "Minimap", 1);
-            draw_text(5, 11, GET_TEXT(TXT_SAVE), 1);
-            draw_text(5, 13, GET_TEXT(TXT_RESUME), 1);
-            draw_text(5, 15, GET_TEXT(TXT_TO_MAIN_MENU), 1);
+            draw_text(5, 11, "Save", 1);
+            draw_text(5, 13, "Resume", 1);
+            draw_text(5, 15, "Main menu", 1);
 
             // --- GESTION DU CURSEUR (SPRITES) ---
             curs_y_pos = 56 + (selection * (8*2));
             curs_x_pos = 32;
         }else {
 
-            draw_text(4, 5, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(4, 5, "Almanach", 1);
             draw_text(4, 7, "D~crets", 1);
             draw_text(4, 9, "Minimap", 1);
-            draw_text(4, 11, GET_TEXT(TXT_SAVE), 1);
-            draw_text(4, 13, GET_TEXT(TXT_RESUME), 1);
-            draw_text(4, 15, GET_TEXT(TXT_TO_MAIN_MENU), 1);
+            draw_text(4, 11, "Sauvegarde", 1);
+            draw_text(4, 13, "Reprendre", 1);
+            draw_text(4, 15, "Menu principal", 1);
 
             // --- GESTION DU CURSEUR (SPRITES) ---
             curs_y_pos = 56 + (selection * (8*2));
@@ -214,7 +214,7 @@ if (joy & J_B) {
             }
             else if (selection == 3) {      // SAUVEGARDER
                 nb_perform_save_b2();
-                uint8_t blank_save[20] = {0};
+                static const uint8_t blank_save[20] = {0};
                 /*set_win_tiles(1,  5, 18, 1, blank_save);
                 set_win_tiles(1,  7, 18, 1, blank_save);
                 set_win_tiles(1,  9, 18, 1, blank_save);
@@ -237,19 +237,19 @@ if (joy & J_B) {
                 set_win_tiles(1, 9, 18, 1, blank_save);
                 move_sprite(0, curs_x_pos, curs_y_pos);
                 if (game.language == LANG_EN) {
-                    draw_text(5, 5,  GET_TEXT(TXT_STATS_ALMANACH), 1);
+                    draw_text(5, 5, "Almanach", 1);
                     draw_text(5, 7,  "Decrees", 1);
                     draw_text(5, 9,  "Minimap", 1);
-                    draw_text(5, 11, GET_TEXT(TXT_SAVE), 1);
-                    draw_text(5, 13, GET_TEXT(TXT_RESUME), 1);
-                    draw_text(5, 15, GET_TEXT(TXT_TO_MAIN_MENU), 1);
+                    draw_text(5, 11, "Save", 1);
+                    draw_text(5, 13, "Resume", 1);
+                    draw_text(5, 15, "Main menu", 1);
                 } else {
-                    draw_text(4, 5,  GET_TEXT(TXT_STATS_ALMANACH), 1);
+                    draw_text(4, 5, "Almanach", 1);
                     draw_text(4, 7,  "D~crets", 1);
                     draw_text(4, 9,  "Minimap", 1);
-                    draw_text(4, 11, GET_TEXT(TXT_SAVE), 1);
-                    draw_text(4, 13, GET_TEXT(TXT_RESUME), 1);
-                    draw_text(4, 15, GET_TEXT(TXT_TO_MAIN_MENU), 1);
+                    draw_text(4, 11, "Sauvegarde", 1);
+                    draw_text(4, 13, "Reprendre", 1);
+                    draw_text(4, 15, "Menu principal", 1);
                 }
             }
             else if (selection == 4) menu_running = 0; // RESUME
@@ -336,14 +336,14 @@ uint8_t story_sub_menu() {
 
     if (game.language == LANG_EN) {
 
-        draw_text(5, 10, GET_TEXT(TXT_NEW_GAME), 1);
-        draw_text(5, 12, GET_TEXT(TXT_CONTINUE), 1);
-        draw_text(5, 15, GET_TEXT(TXT_BACK), 1);
+        draw_text(5, 10, "New game", 1);
+        draw_text(5, 12, "Continue", 1);
+        draw_text(5, 15, "B : back", 1);
     } else {
 
-        draw_text(3, 10, GET_TEXT(TXT_NEW_GAME), 1);
-        draw_text(3, 12, GET_TEXT(TXT_CONTINUE), 1);
-        draw_text(3, 15, GET_TEXT(TXT_BACK), 1);
+        draw_text(3, 10, "Nouvelle partie", 1);
+        draw_text(3, 12, "Continuer", 1);
+        draw_text(3, 15, "B : retour", 1);
     }
 
     waitpadup();
@@ -431,13 +431,13 @@ uint8_t story_sub_menu() {
                     nb_draw_menu_border();
                     draw_presidente_bkg(1);
                     if (game.language == LANG_EN) {
-                        draw_text(5, 10, GET_TEXT(TXT_NEW_GAME), 1);
-                        draw_text(5, 12, GET_TEXT(TXT_CONTINUE), 1);
-                        draw_text(5, 15, GET_TEXT(TXT_BACK), 1);
+                        draw_text(5, 10, "New game", 1);
+                        draw_text(5, 12, "COntinue", 1);
+                        draw_text(5, 15, "B : back", 1);
                     } else {
-                        draw_text(3, 10, GET_TEXT(TXT_NEW_GAME), 1);
-                        draw_text(3, 12, GET_TEXT(TXT_CONTINUE), 1);
-                        draw_text(3, 15, GET_TEXT(TXT_BACK), 1);
+                        draw_text(3, 10, "Nouvelle partie", 1);
+                        draw_text(3, 12, "COntinuer", 1);
+                        draw_text(3, 15, "B : retour", 1);
                     }
                     // On continue la boucle while(menu_running)
                 } else {
@@ -475,9 +475,9 @@ uint8_t story_sub_menu() {
                     nb_disable_sram_b2();
                     nb_play_sound_error_b2();
                     if (game.language == LANG_EN) {
-                        draw_text(5, 15, GET_TEXT(TXT_NO_SAVE), 1);
+                        draw_text(5, 15, "No save found", 1);
                     } else {
-                        draw_text(2, 15, GET_TEXT(TXT_NO_SAVE), 1); 
+                        draw_text(2, 15, "Aucune sauvegarde", 1); 
                     }
                     delay(1000);
                     draw_text(1, 15, "                  ", 1);

@@ -19,6 +19,7 @@
 #include "plane.h"
 extern void draw_menu_border(void);
 extern void decrets_screen(void);
+#include "stats_pages.h"
 
 
 uint8_t curs_x = 10;
@@ -212,6 +213,26 @@ void nb_stats_screen_b4(void) __nonbanked {
     SWITCH_ROM(4);
     stats_screen();
     SWITCH_ROM(2);
+}
+
+// Appelé depuis stats_screen (bank 4) : rendu index almanach (bank 7).
+void nb_stats_draw_index(uint8_t cursor_pos) __nonbanked {
+    uint8_t s = CURRENT_BANK; SWITCH_ROM(7); stats_draw_index(cursor_pos); SWITCH_ROM(s);
+}
+
+// Appelé depuis stats_screen (bank 4) : rendu d'une page almanach (bank 7).
+void nb_stats_draw_page(uint8_t page) __nonbanked {
+    uint8_t s = CURRENT_BANK; SWITCH_ROM(7);
+    if      (page == 0) stats_draw_page0();
+    else if (page == 1) stats_draw_page1();
+    else if (page == 2) stats_draw_page2();
+    else if (page == 3) stats_draw_page3();
+    else if (page == 4) stats_draw_page4();
+    else if (page == 5) stats_draw_page5();
+    else if (page == 6) stats_draw_page6();
+    else if (page == 7) stats_draw_page7();
+    else if (page == 8) stats_draw_page8();
+    SWITCH_ROM(s);
 }
 
 // Appelé depuis stats_screen.c (bank 4) : story_get_current_step() est en bank 4.

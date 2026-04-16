@@ -104,7 +104,7 @@ ENLEVER TOUS GET TEXT DES MENUS : est-ce que c'est pour ça qu'on a des tiles co
 ************************************
 ************************************
 ************************************
-traduire le sgoals en ang
+traduire le sgoals en ang : les goals de la page goals (cochés)
 
 restore_shop_tiles utilisé dans stats_screen ? pourquoi ? 
 
@@ -113,6 +113,8 @@ et traduire L/R
 
 quand on est sur le hud, et qu'un dialogque apparait, on revient sur le hud, mais il s'affiche sur une seule ligne (au lieu de 2 lignes)
 
+
+dans le hud : décalage des tiles : c'est la 5e tile en vram (5e après la tile correcte, celle qui aurait du s'afficher) qui s'affiche
 
 sur upgrade : enlever le b retour
 

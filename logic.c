@@ -824,8 +824,8 @@ void update_hud() { // fais un peu doublon avec move_cursor (et sont appelés to
         uint8_t blank = 0;
         set_win_tiles(0, 0, 1, 1, &blank); // efface la lettre résiduelle du nom d'outil (col 0)
         set_win_tiles(0, 1, 1, 1, &blank);
-        uint8_t icons1[] = {65, 66, 0, 69, 70, 0, 73, 74, 0, 77, 78, 0, 81, 82, 0, 85, 86, 0};
-        uint8_t icons2[] = {67, 68, 0, 71, 72, 0, 75, 76, 0, 79, 80, 0, 83, 84, 0, 87, 88, 0};
+        static const uint8_t icons1[] = {65, 66, 0, 69, 70, 0, 73, 74, 0, 77, 78, 0, 81, 82, 0, 85, 86, 0};
+        static const uint8_t icons2[] = {67, 68, 0, 71, 72, 0, 75, 76, 0, 79, 80, 0, 83, 84, 0, 87, 88, 0};
         set_win_tiles(1, 0, 18, 1, icons1);
         set_win_tiles(1, 1, 18, 1, icons2);
 
