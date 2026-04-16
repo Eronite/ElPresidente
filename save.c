@@ -360,6 +360,10 @@ uint8_t load_saves_screen() {
                                     building_registry[j].flags |= sflg & (BLDG_UPG1_APPLIED | BLDG_UPG2_APPLIED | BLDG_FLAG_HAS_ORE);
                                     building_salary[j]              = ssal;
                                     building_registry[j].occupants  = socc;
+                                    if (building_registry[j].type == TILE_ONETILEHOME &&
+                                        (building_registry[j].flags & BLDG_UPG2_APPLIED)) {
+                                        building_registry[j].max_capacity += 2;
+                                    }
                                     break;
                                 }
                             }

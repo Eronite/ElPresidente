@@ -33,8 +33,8 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      00001AF2  l__HOME   |    00001F06  l__CODE_6 |    00002000  _rROMB0  
      00002912  l__CODE_5 |    00002BB8  s__BASE   |    00002BB8  s__CODE_0
      00002BB8  s__INITIA |    00002BB8  s__LIT    |    00002FE6  s__GSINIT
-     00002FF2  s__GSFINA |    00003000  _rROMB1   |    000030D8  l__CODE_3
-     000035B9  l__CODE_4 |    00003945  l__CODE_1 |    00003B24  l__CODE_2
+     00002FF2  s__GSFINA |    00003000  _rROMB1   |    000030F9  l__CODE_3
+     000036BB  l__CODE_4 |    00003945  l__CODE_1 |    00003B45  l__CODE_2
      00004000  _rMBC7_SR |    00004000  _rRAMB    |    00008000  __VRAM   
      00008000  __VRAM800 |    00008800  __VRAM880 |    00009000  __VRAM900
      00009800  __SCRN0   |    00009C00  __SCRN1   |    0000A000  __SRAM   
@@ -449,35 +449,35 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_3                00034000    000030D8 =       12504. bytes (REL,CON)
+_CODE_3                00034000    000030F9 =       12537. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
-     000341FD  _find_bui |    00034D9B  _show_upg |    00034FB5  _show_bui
-     000350F9  _tile_dat |    000352F9  _cursor_d |    00035349  _menu_ico
-     000353C9  _shop     |    000354C9  _icon01   |    00035509  _limousin
-     000356B9  _specialC |    00035729  _fleche   |    00035739  _penultim
-     00035819  _titleEl  |    00035859  _titlePre |    00035979  _basicCom
-     000359B9  _iconBuil |    000359F9  _iconRes  |    00035A39  _iconGov 
-     00035A79  _iconMine |    00035AB9  _iconEner |    00035AF9  _iconCatR
-     00035B39  _iconSubR |    00035B79  _iconSubD |    00035BB9  _farmish 
-     00035C49  _plantati |    00035C89  _iconSubH |    00035CC9  _iconSubS
-     00035D09  _iconSubF |    00035D49  _iconSubF |    00035D89  _iconSubP
-     00035DC9  _iconSubW |    00035E09  _sawmill  |    00035F09  _police  
-     00035F49  _iconSubP |    00035F89  _church   |    00036019  _iconSubC
-     00036059  _hospital |    00036159  _iconSubH |    00036199  _iconSubS
-     000361D9  _power    |    000362D9  _mine     |    000363D9  _iconSubM
-     00036419  _iconCatL |    00036459  _iconSubB |    00036499  _iconSubM
-     000364D9  _iconSubU |    00036519  _mediaDis |    000365A9  _baraque 
-     000365E9  _road_x6  |    00036649  _road_int |    00036679  _dollar  
-     00036689  _date_til |    00036739  _hud_extr |    00036779  _cursor_t
-     00036789  _flash    |    00036799  _car_tile |    000367A9  _car_tile
-     000367B9  _car_tile |    000367C9  _car_tile |    000367D9  _water   
-     00036839  _charb    |    00036849  _port     |    00036889  _iconSubP
-     000368C9  _oneTileH |    000368D9  _iconSubO |    00036919  _tram    
-     00036959  _boat     |    00036999  _boatBack |    000369D9  _interrog
-     000369E9  _troisCot |    00036A19  _plane_lo |    00036B20  _plane_in
-     00036B38  _plane_up |    00036DC0  _water_an
+     000341FD  _find_bui |    00034D9B  _show_upg |    00034FD6  _show_bui
+     0003511A  _tile_dat |    0003531A  _cursor_d |    0003536A  _menu_ico
+     000353EA  _shop     |    000354EA  _icon01   |    0003552A  _limousin
+     000356DA  _specialC |    0003574A  _fleche   |    0003575A  _penultim
+     0003583A  _titleEl  |    0003587A  _titlePre |    0003599A  _basicCom
+     000359DA  _iconBuil |    00035A1A  _iconRes  |    00035A5A  _iconGov 
+     00035A9A  _iconMine |    00035ADA  _iconEner |    00035B1A  _iconCatR
+     00035B5A  _iconSubR |    00035B9A  _iconSubD |    00035BDA  _farmish 
+     00035C6A  _plantati |    00035CAA  _iconSubH |    00035CEA  _iconSubS
+     00035D2A  _iconSubF |    00035D6A  _iconSubF |    00035DAA  _iconSubP
+     00035DEA  _iconSubW |    00035E2A  _sawmill  |    00035F2A  _police  
+     00035F6A  _iconSubP |    00035FAA  _church   |    0003603A  _iconSubC
+     0003607A  _hospital |    0003617A  _iconSubH |    000361BA  _iconSubS
+     000361FA  _power    |    000362FA  _mine     |    000363FA  _iconSubM
+     0003643A  _iconCatL |    0003647A  _iconSubB |    000364BA  _iconSubM
+     000364FA  _iconSubU |    0003653A  _mediaDis |    000365CA  _baraque 
+     0003660A  _road_x6  |    0003666A  _road_int |    0003669A  _dollar  
+     000366AA  _date_til |    0003675A  _hud_extr |    0003679A  _cursor_t
+     000367AA  _flash    |    000367BA  _car_tile |    000367CA  _car_tile
+     000367DA  _car_tile |    000367EA  _car_tile |    000367FA  _water   
+     0003685A  _charb    |    0003686A  _port     |    000368AA  _iconSubP
+     000368EA  _oneTileH |    000368FA  _iconSubO |    0003693A  _tram    
+     0003697A  _boat     |    000369BA  _boatBack |    000369FA  _interrog
+     00036A0A  _troisCot |    00036A3A  _plane_lo |    00036B41  _plane_in
+     00036B59  _plane_up |    00036DE1  _water_an
 ASxxxx Linker V03.00/V05.40 + sdld,  page 32.
 Hexadecimal  [32-Bits]
 
@@ -503,22 +503,22 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_2                00024000    00003B24 =       15140. bytes (REL,CON)
+_CODE_2                00024000    00003B45 =       15173. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
      00024000  _confirm_ |    00024209  _wipe_slo |    0002422E  _load_sav
-     0002475B  _save_sto |    00024EA8  _load_sto |    0002507A  _main_men
-     000251DF  _pause_me |    00025634  _confirm_ |    000257CE  _story_su
-     00025A89  _language |    00025B71  _init_lan |    00025B78  _get_text
-     0002719E  _intro_bu |    0002759E  _generate |    0002766D  _display_
-     0002776A  _intro_ti |    00027901  _show_min
+     0002477C  _save_sto |    00024EC9  _load_sto |    0002509B  _main_men
+     00025200  _pause_me |    00025655  _confirm_ |    000257EF  _story_su
+     00025AAA  _language |    00025B92  _init_lan |    00025B99  _get_text
+     000271BF  _intro_bu |    000275BF  _generate |    0002768E  _display_
+     0002778B  _intro_ti |    00027922  _show_min
 ASxxxx Linker V03.00/V05.40 + sdld,  page 35.
 Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_4                00044000    000035B9 =       13753. bytes (REL,CON)
+_CODE_4                00044000    000036BB =       14011. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    

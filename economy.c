@@ -951,6 +951,9 @@ void show_upgrade_menu(uint8_t bldg_idx) {
                 if (game.money >= (int32_t)cost && elec_ok_buy) {
                     game.money -= cost;
                     b->flags |= flag;
+                    if (b->type == TILE_ONETILEHOME && sel == 1) {
+                        b->max_capacity += 2;
+                    }
                     nb_play_sound_build();
                     draw_upgrade_menu(b->type, b->flags); // Redessine TOUT car le statut a changé
                 } else { nb_play_sound_error(); }

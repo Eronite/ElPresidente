@@ -50,7 +50,7 @@ char *strings_fr[] = {
     "an adventure !",
     // Upgrades FR (150 strings, ordre : ONETILE/HOUSE/FARM/PLANT/WOOD/MINE/FACT/MALL/POL/CHU/HOS/SCH/PWR/BAR/DIS)
     "La cabane recoit un", "vrai toit. Les habi", "tants pleurent -- ou", "c'est la pluie.", "+3 bonheur",
-    "Le Presidente a vu", "que 4 pers. tiennent", "dans 8m2 avec bonne", "volonte patriotique.", "+1 capacite log.",
+    "Le Presidente a vu", "que 6 pers. tiennent", "dans 8m2 avec bonne", "volonte patriotique.", "+2 capacite log.",
     "L'eau courante !", "Les habitants", "decouvrent qu'on", "peut se laver.", "+5 bonheur",
     "Vous doublez les", "loyers. Les locatai", "res se plaignent", "mais paient.", "+rev. loyers",
     "Des tuyaux ! L'eau", "arrive aux cultures", "qui mouraient de", "soif. Progres !", "Nourrit. +40%",
@@ -116,7 +116,7 @@ char *strings_en[] = {
     "an adventure !",
     // Upgrades EN
     "The shack gets a", "real roof. Residents", "weep with joy -- or", "it was just the rain.", "+3 happiness",
-    "El Presidente found", "4 people fit in 8m2", "with patriotic", "goodwill.", "+1 housing cap.",
+    "El Presidente found", "6 people fit in 8m2", "with patriotic", "goodwill.", "+2 housing cap.",
     "Running water! The", "residents discover", "one can wash without", "waiting for rain.", "+5 happiness",
     "You raise the rents.", "Tenants complain but", "pay -- they have", "nowhere else to go.", "+rent revenue",
     "Pipes! Water flows", "to crops that were", "dying. Progress", "smells like mud.", "Food prod +40%",

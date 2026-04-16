@@ -1,3 +1,5 @@
+#include "assets.h"
+#include "logic.h"
 #pragma bank 4
 #include <gb/gb.h>
 #include "constants.h"
@@ -25,20 +27,29 @@ uint8_t nb_of_houses = 0, nb_of_farms = 0;
     else if (building_registry[ri].type == TILE_FARM_NW) nb_of_farms++;
 } }
 
-const char *index_titles[7] = {
-    "G~n~ral",
-    "Social",
-    "Revenus",
-    "Mission",
-    "Electricit~",
-    "D~penses",
-    "Bonheur"
-};
+const char *index_titles[7];
+if (game.language == LANG_EN) {
+        index_titles[0] = "General";
+        index_titles[1] = "Social";
+        index_titles[2] = "Income";
+        index_titles[3] = "Goals";
+        index_titles[4] = "Electricity";
+        index_titles[5] = "Expenses";
+        index_titles[6] = "Happiness";
+} else {
+        index_titles[0] = "G~n~ral";
+        index_titles[1] = "Social";
+        index_titles[2] = "Revenus";
+        index_titles[3] = "Objectifs";
+        index_titles[4] = "Electricit~";
+        index_titles[5] = "D~penses";
+        index_titles[6] = "Bonheur";
+}
 const uint8_t index_to_page[7] = {0, 1, 2, 4, 5, 6, 7};
 
 clear_entire_window();
 nb_draw_menu_border();
-draw_text(1, 16, GET_TEXT(TXT_PAGE_NAV), 1);
+//draw_text(1, 16, , 1);
 while (menu_running) {
     if (redraw == 1) {
         // Effacer uniquement la zone de contenu intérieure (cols 1-18, rows 1-15)
@@ -54,6 +65,7 @@ while (menu_running) {
                 uint8_t y = 3 + irow * 2;
                 if (irow == cursor_pos) draw_text(1, y, ">", 1);
                 draw_text(3, y, (char*)index_titles[irow], 1);
+                //draw_text(2, 16, "           ", 1);
             }
         }
         else if (stats_page == 0) { // --- PAGE 1 : GENERAL ---
@@ -96,6 +108,12 @@ while (menu_running) {
 
             draw_text(1, 9, "Unemployment :", 1);
             draw_number(15, 9, game.unemployment_rate, 1);
+
+            /*draw_text(1, 11, "Food :", 1);
+            draw_text(1, 12, "produced :", 1);
+            draw_number(15, 12, game.foodProduction, 1);
+            draw_text(1, 13, "consumed :", 1);
+            draw_number(15, 13, game.foodConsumption, 1);*/
             } else {
                 draw_text(6, 1, "Social", 1);
                 draw_text(1, 5, "Sans abris :", 1);
@@ -106,6 +124,12 @@ while (menu_running) {
 
                 draw_text(1, 9, "Taux chomage :", 1);
                 draw_number(15, 9, game.unemployment_rate, 1);
+
+                draw_text(1, 11, "Nourriture", 1);
+                draw_text(1, 12, "produite    :", 1);
+                draw_number(15, 12, game.foodProduction, 1);
+                draw_text(1, 13, "consomm~e   :", 1);
+                draw_number(15, 13, game.foodConsumption, 1);
             }
             //draw_text(1, 7, GET_TEXT(TXT_STATS_HOUSING_CAPACITY), 1);
             //draw_number(14, 8, game.housing_capacity, 1);
@@ -139,6 +163,7 @@ while (menu_running) {
                         draw_text(1, 13, "chomage pctg :", 1);
             draw_number(12, 14, game.unemployment_rate, 1);*/
                         //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
+            draw_text(2, 16, "           ", 1);
             draw_text(4, 1, "Revenus 1/2", 1);
             draw_text(1, 4, "loyers :", 1);
             draw_number(15, 4, game.rev_rents, 1);
@@ -161,7 +186,7 @@ while (menu_running) {
         }
         else if (stats_page == 4) { // --- PAGE 4 : MISSIONS ---
             restore_shop_tiles(); // recharge cursor_data en tile sprite 0 (écrasée par fleche)
-            draw_text(6, 1, GET_TEXT(TXT_STATS_MISSION), 1);
+            draw_text(6, 1, "Objectifs", 1);
             if (game.game_mode == MODE_STORY && game.mission_id >= 4) {
                 draw_text(3, 4, "Toutes les", 1);
                 draw_text(3, 6, "missions", 1);
@@ -169,7 +194,7 @@ while (menu_running) {
             } else if (game.game_mode == MODE_STORY) {
                 MissionStep cur;
                 nb_story_get_current_step_b2(&cur);
-                draw_text(3, 2, GET_TEXT(TXT_STATS_CURRENT_GOAL), 1);
+                draw_text(6, 2, "Objectifs", 1);
                 //draw_text(1, 4, GET_MISSION_TEXT(cur.goal_idx), 1);
                 uint8_t row = 7;
                 uint8_t chk_spr = 1u; // prochain slot sprite pour coche
@@ -332,9 +357,9 @@ while (menu_running) {
         else if (stats_page == 5) { // --- PAGE 6 ---
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
             draw_text(5, 1, "Electricit~", 1);
-            draw_text(1, 5, "produite :", 1);
+            draw_text(1, 5, "Produite :", 1);
             draw_number(15, 5, game.electricity_prod, 1);
-            draw_text(1, 7, "consomm~e :", 1);
+            draw_text(1, 7, "Consomm~e :", 1);
             draw_number(15, 7, game.electricity_cons, 1);
         }
 
@@ -365,44 +390,45 @@ while (menu_running) {
         else if (stats_page == 6) { // --- PAGE 9 : DEPENSES ---
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
             draw_text(5, 1, "D~penses", 1);
-            draw_text(1, 5, "maintenance :", 1);
+            draw_text(1, 5, "Maintenance :", 1);
             draw_number(15, 5, game.exp_maintenance, 1);
-            draw_text(1, 7, "salaires :", 1);
+            draw_text(1, 7, "Salaires :", 1);
             draw_number(15, 7, game.exp_salaries, 1);
-            draw_text(1, 9, "construction :", 1);
+            draw_text(1, 9, "Construction :", 1);
             draw_number(15, 9, game.exp_construction, 1);
             if (game.decree_tram) {
-                draw_text(1, 11, "tram :", 1);
+                draw_text(1, 11, "Tram :", 1);
                 draw_number(15, 11, 1000, 1);
-                draw_text(1, 13, "total :", 1);
+                draw_text(1, 13, "Total :", 1);
                 draw_number(15, 13, (uint16_t)game.monthly_expenses, 1);
             } else {
-                draw_text(1, 11, "total :", 1);
+                draw_text(1, 11, "Total :", 1);
                 draw_number(15, 11, (uint16_t)game.monthly_expenses, 1);
             }
         }
 
         else if (stats_page == 7) { // --- PAGE 10 : FACTEURS BONHEUR 1 ---
+            draw_text(2, 16, "L/R : page", 1);
             draw_text(2, 1, "Facteurs bonheur", 1);
             draw_text(6, 2, "1/2", 1);
             // Batiments (hap_d stocké directement depuis economy.c)
             {
                 int16_t bldg_hap = game.hap_buildings;
-                draw_text(1, 4, "batiments :", 1);
+                draw_text(1, 4, "Batiments :", 1);
                 if (bldg_hap >= 0) { draw_text(13, 4, "+", 1); draw_number(14, 4, (uint16_t)bldg_hap, 1); }
                 else               { draw_text(13, 4, "-", 1); draw_number(14, 4, (uint16_t)(-bldg_hap), 1); }
             }
             // Crime
             {
                 int16_t v = -(int16_t)(game.crime_rate / 5);
-                draw_text(1, 6, "crime :", 1);
+                draw_text(1, 6, "Crime :", 1);
                 if (v >= 0) { draw_text(13, 6, "+", 1); draw_number(14, 6, (uint16_t)v, 1); }
                 else        { draw_text(13, 6, "-", 1); draw_number(14, 6, (uint16_t)(-v), 1); }
             }
             // Chomage
             {
                 int16_t v = -(int16_t)(game.unemployment_rate / 5);
-                draw_text(1, 8, "chomage :", 1);
+                draw_text(1, 8, "Chomage :", 1);
                 if (v >= 0) { draw_text(13, 8, "+", 1); draw_number(14, 8, (uint16_t)v, 1); }
                 else        { draw_text(13, 8, "-", 1); draw_number(14, 8, (uint16_t)(-v), 1); }
             }
@@ -411,14 +437,14 @@ while (menu_running) {
                 int16_t pen = (int16_t)(game.homeless * 2);
                 if (pen > 20) pen = 20;
                 pen = -pen;
-                draw_text(1, 10, "sans-abri :", 1);
+                draw_text(1, 10, "Sans-abri :", 1);
                 if (pen >= 0) { draw_text(13, 10, "+", 1); draw_number(14, 10, (uint16_t)pen, 1); }
                 else          { draw_text(13, 10, "-", 1); draw_number(14, 10, (uint16_t)(-pen), 1); }
             }
             // Electricite
             {
                 int16_t v = (game.electricity_prod < game.electricity_cons) ? -10 : 0;
-                draw_text(1, 12, "~lectricit~ :", 1);
+                draw_text(1, 12, "Electricit~ :", 1);
                 if (v >= 0) { draw_text(13, 12, "+", 1); draw_number(14, 12, (uint16_t)v, 1); }
                 else        { draw_text(13, 12, "-", 1); draw_number(14, 12, (uint16_t)(-v), 1); }
             }
@@ -430,25 +456,25 @@ while (menu_running) {
             // Sante
             {
                 int8_t v = game.health_hap_bonus;
-                draw_text(1, 4, "sant~ :", 1);
+                draw_text(1, 4, "Sant~ :", 1);
                 if (v >= 0) { draw_text(13, 4, "+", 1); draw_number(14, 4, (uint16_t)v, 1); }
                 else        { draw_text(13, 4, "-", 1); draw_number(14, 4, (uint16_t)(-v), 1); }
             }
             // Decret nourriture
             {
                 int8_t v = game.decree_food_hap_bonus;
-                draw_text(1, 6, "d~cret food :", 1);
+                draw_text(1, 6, "D~cret food :", 1);
                 if (v >= 0) { draw_text(13, 6, "+", 1); draw_number(14, 6, (uint16_t)v, 1); }
                 else        { draw_text(13, 6, "-", 1); draw_number(14, 6, (uint16_t)(-v), 1); }
             }
             // Famine
             {
-                draw_text(1, 8, "famine :", 1);
+                draw_text(1, 8, "Famine :", 1);
                 if (game.is_in_famine) { draw_text(13, 8, "-", 1); draw_number(14, 8, 1, 1); }
                 else                   { draw_text(13, 8, "0", 1); }
             }
             // Bonheur total actuel
-            draw_text(1, 11, "bonheur total :", 1);
+            draw_text(1, 11, "Bonheur total :", 1);
             draw_number(15, 12, game.avg_happiness, 1);
         }
 
