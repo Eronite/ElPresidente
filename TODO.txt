@@ -104,6 +104,9 @@ ENLEVER TOUS GET TEXT DES MENUS : est-ce que c'est pour ça qu'on a des tiles co
 ************************************
 ************************************
 ************************************
+traduire le sgoals en ang
+
+restore_shop_tiles utilisé dans stats_screen ? pourquoi ? 
 
 draw_text(2, 16, "           ", 1); à mettre quand on revient d'une page de revenus ou bonheur
 et traduire L/R

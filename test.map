@@ -28,13 +28,13 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      00000006  l__HEADER |    00000007  l__HEADER |    00000008  l__HEADER
      0000000C  l__GSINIT |    00000013  l__HRAM   |    00000030  l__HEADER
      00000060  l__HEADER |    000000AB  l__HEADER |    00000200  s__CODE  
-     0000042E  l__INITIA |    0000042E  l__INITIA |    00000EC3  l__CODE_7
+     00000456  l__INITIA |    00000456  l__INITIA |    00000EC3  l__CODE_7
      00000EC6  l__CODE   |    000010C6  s__HOME   |    00001A38  l__DATA  
      00001AF2  l__HOME   |    00001F06  l__CODE_6 |    00002000  _rROMB0  
      00002912  l__CODE_5 |    00002BB8  s__BASE   |    00002BB8  s__CODE_0
-     00002BB8  s__INITIA |    00002BB8  s__LIT    |    00002FE6  s__GSINIT
-     00002FF2  s__GSFINA |    00003000  _rROMB1   |    000030F9  l__CODE_3
-     000036BB  l__CODE_4 |    00003945  l__CODE_1 |    00003B45  l__CODE_2
+     00002BB8  s__INITIA |    00002BB8  s__LIT    |    00003000  _rROMB1  
+     0000300E  s__GSINIT |    0000301A  s__GSFINA |    000030F9  l__CODE_3
+     000039AB  l__CODE_1 |    00003A0A  l__CODE_4 |    00003B45  l__CODE_2
      00004000  _rMBC7_SR |    00004000  _rRAMB    |    00008000  __VRAM   
      00008000  __VRAM800 |    00008800  __VRAM880 |    00009000  __VRAM900
      00009800  __SCRN0   |    00009C00  __SCRN1   |    0000A000  __SRAM   
@@ -42,7 +42,7 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      0000A030  _rMBC7_AC |    0000A040  _rMBC7_AC |    0000A050  _rMBC7_AC
      0000C000  __RAM     |    0000C000  _shadow_O |    0000C0A0  s__DATA  
      0000D000  __RAMBANK |    0000DAD8  s__BSS    |    0000DAD8  s__INITIA
-     0000DF06  s__HEAP   |    0000DF06  s__HEAP_E |    0000E000  .STACK   
+     0000DF2E  s__HEAP   |    0000DF2E  s__HEAP_E |    0000E000  .STACK   
      0000FE00  __OAMRAM  |    0000FF00  _P1_REG   |    0000FF00  __IO     
      0000FF01  _SB_REG   |    0000FF02  _SC_REG   |    0000FF04  _DIV_REG 
      0000FF05  _TIMA_REG |    0000FF06  _TMA_REG  |    0000FF07  _TAC_REG 
@@ -337,7 +337,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_INITIALIZER           00002BB8    0000042E =        1070. bytes (REL,CON)
+_INITIALIZER           00002BB8    00000456 =        1110. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -346,17 +346,17 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_GSINIT                00002FE6    0000000C =          12. bytes (REL,CON)
+_GSINIT                0000300E    0000000C =          12. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
-     00002FE6  gsinit   
+     0000300E  gsinit   
 ASxxxx Linker V03.00/V05.40 + sdld,  page 25.
 Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_GSFINAL               00002FF2    00000001 =           1. bytes (REL,CON)
+_GSFINAL               0000301A    00000001 =           1. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -379,7 +379,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_INITIALIZED           0000DAD8    0000042E =        1070. bytes (REL,CON)
+_INITIALIZED           0000DAD8    00000456 =        1110. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -387,16 +387,15 @@ _INITIALIZED           0000DAD8    0000042E =        1070. bytes (REL,CON)
      0000DADB  _force_re |    0000DADC  _building |    0000DADD  _baraque_
      0000DADE  _month_pa |    0000DADF  _is_menu_ |    0000DAE0  _cam_x   
      0000DAE2  _cam_y    |    0000DAE4  _cam_targ |    0000DAE6  _cam_targ
-     0000DAE8  _tool_nam |    0000DB10  _current_ |    0000DB11  _fast_mov
-     0000DB12  _is_selec |    0000DB13  _current_ |    0000DB1B  _current_
-     0000DB1C  _alert_ti |    0000DB1E  _flags_st |    0000DB20  _sub_tool
-     0000DB26  _cars_no_ |    0000DB29  _tram_nee |    0000DB2B  _mission_
-     0000DB4B  _mission_ |    0000DB6B  _mission1 |    0000DB9B  _mission2
-     0000DBCB  _mission3 |    0000DBFB  _mission4 |    0000DC2B  _current_
-     0000DC2C  _strings_ |    0000DD94  _strings_ |    0000DEFC  _boat_has
-     0000DF00  .curx     |    0000DF01  .cury     |    0000DF02  .fg_colou
-     0000DF02  __current |    0000DF03  .bg_colou |    0000DF04  .draw_mod
-     0000DF05  __map_til
+     0000DB38  _current_ |    0000DB39  _fast_mov |    0000DB3A  _is_selec
+     0000DB3B  _current_ |    0000DB43  _current_ |    0000DB44  _alert_ti
+     0000DB46  _flags_st |    0000DB48  _sub_tool |    0000DB4E  _cars_no_
+     0000DB51  _tram_nee |    0000DB53  _mission_ |    0000DB73  _mission_
+     0000DB93  _mission1 |    0000DBC3  _mission2 |    0000DBF3  _mission3
+     0000DC23  _mission4 |    0000DC53  _current_ |    0000DC54  _strings_
+     0000DDBC  _strings_ |    0000DF24  _boat_has |    0000DF28  .curx    
+     0000DF29  .cury     |    0000DF2A  .fg_colou |    0000DF2A  __current
+     0000DF2B  .bg_colou |    0000DF2C  .draw_mod |    0000DF2D  __map_til
 ASxxxx Linker V03.00/V05.40 + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
@@ -423,7 +422,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_1                00014000    00003945 =       14661. bytes (REL,CON)
+_CODE_1                00014000    000039AB =       14763. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -438,12 +437,12 @@ _CODE_1                00014000    00003945 =       14661. bytes (REL,CON)
      00014AB6  _rebuild_ |    00014DAD  _get_sub_ |    00014DBC  _reset_su
      00014DC1  _update_s |    000151F0  _sub_tool |    00015208  _is_area_
      00015285  _plot_bui |    0001532D  _update_g |    000159B8  _update_s
-     000159C0  _draw_hud |    00015B90  _update_h |    00015CFF  _move_lim
-     00015D48  _logo_scr |    00015FC4  _story_di |    000162CF  _move_cur
-     00016730  _force_cu |    0001674D  _trigger_ |    00016810  _trigger_
-     000168C6  _setup_st |    000169B8  _update_r |    00016C24  _cars_ini
-     00016C7A  _cars_upd |    0001705C  _tram_ini |    000170A9  _tram_upd
-     0001763F  _boat_ini |    00017663  _boat_upd
+     000159C0  _draw_hud |    00015B90  _update_h |    00015D0A  _move_lim
+     00015D53  _logo_scr |    00015FCF  _story_di |    000162DA  _move_cur
+     0001673B  _force_cu |    00016758  _trigger_ |    0001681B  _trigger_
+     000168D1  _setup_st |    000169C3  _update_r |    00016C2F  _cars_ini
+     00016C85  _cars_upd |    00017067  _tram_ini |    000170B4  _tram_upd
+     000176A5  _boat_ini |    000176C9  _boat_upd
 ASxxxx Linker V03.00/V05.40 + sdld,  page 31.
 Hexadecimal  [32-Bits]
 
@@ -518,13 +517,13 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE_4                00044000    000036BB =       14011. bytes (REL,CON)
+_CODE_4                00044000    00003A0A =       14858. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
      00044000  _story_ge |    000442C1  _story_mo |    00044413  _map_miss
      00045413  _draw_men |    000454E7  _font_lc_ |    000456A7  _menu_bor
-     00045CAE  _decrets_ |    00045EB5  _stats_sc
+     00045CAE  _decrets_ |    00045EB0  _stats_sc
 ASxxxx Linker V03.00/V05.40 + sdld,  page 36.
 Hexadecimal  [32-Bits]
 

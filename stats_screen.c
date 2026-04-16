@@ -163,38 +163,77 @@ while (menu_running) {
                         draw_text(1, 13, "chomage pctg :", 1);
             draw_number(12, 14, game.unemployment_rate, 1);*/
                         //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(2, 16, "           ", 1);
-            draw_text(4, 1, "Revenus 1/2", 1);
-            draw_text(1, 4, "loyers :", 1);
-            draw_number(15, 4, game.rev_rents, 1);
-            draw_text(1, 6, "food :", 1);
-            draw_number(15, 6, game.rev_food, 1);
-            draw_text(1, 8, "minerai :", 1);
-            draw_number(15, 8, game.rev_ore, 1);
-            draw_text(1, 10, "culture :", 1);
-            draw_number(15, 10, game.rev_culture, 1);
+            if (game.language == LANG_EN) {
+                //draw_text(2, 16, "           ", 1);
+                draw_text(4, 1, "Income 1/2", 1);
+                draw_text(1, 4, "Rents :", 1);
+                draw_number(15, 4, game.rev_rents, 1);
+                draw_text(1, 6, "Food :", 1);
+                draw_number(15, 6, game.rev_food, 1);
+                draw_text(1, 8, "Ore :", 1);
+                draw_number(15, 8, game.rev_ore, 1);
+                draw_text(1, 10, "Farming :", 1);
+                draw_number(15, 10, game.rev_culture, 1);
+            } else {
+                //draw_text(2, 16, "           ", 1);
+                draw_text(4, 1, "Revenus 1/2", 1);
+                draw_text(1, 4, "Loyers :", 1);
+                draw_number(15, 4, game.rev_rents, 1);
+                draw_text(1, 6, "Nourriture :", 1);
+                draw_number(15, 6, game.rev_food, 1);
+                draw_text(1, 8, "Minerai :", 1);
+                draw_number(15, 8, game.rev_ore, 1);
+                draw_text(1, 10, "Cultures :", 1);
+                draw_number(15, 10, game.rev_culture, 1);
+            }
         }
         else if (stats_page == 3) { // --- PAGE 8 : REVENUS 2/2 ---
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(4, 1, "Revenus 2/2", 1);
-            draw_text(1, 4, "bar :", 1);
-            draw_number(15, 4, game.rev_bar, 1);
-            draw_text(1, 6, "magasin :", 1);
-            draw_number(15, 6, game.rev_mall, 1);
-            draw_text(1, 8, "conserverie :", 1);
-            draw_number(15, 8, game.rev_wood, 1);
+            if (game.language == LANG_EN) {
+                draw_text(4, 1, "Income 2/2", 1);
+                draw_text(1, 4, "Bar :", 1);
+                draw_number(15, 4, game.rev_bar, 1);
+                draw_text(1, 6, "Mall :", 1);
+                draw_number(15, 6, game.rev_mall, 1);
+                draw_text(1, 8, "Cannery :", 1);
+                draw_number(15, 8, game.rev_wood, 1);
+            } else {
+                draw_text(4, 1, "Revenus 2/2", 1);
+                draw_text(1, 4, "Bar :", 1);
+                draw_number(15, 4, game.rev_bar, 1);
+                draw_text(1, 6, "Magasin :", 1);
+                draw_number(15, 6, game.rev_mall, 1);
+                draw_text(1, 8, "Conserverie :", 1);
+                draw_number(15, 8, game.rev_wood, 1);
+            }
         }
         else if (stats_page == 4) { // --- PAGE 4 : MISSIONS ---
             restore_shop_tiles(); // recharge cursor_data en tile sprite 0 (écrasée par fleche)
-            draw_text(6, 1, "Objectifs", 1);
+            if (game.language == LANG_EN) {
+                draw_text(8, 1, "Goals", 1);
+            } else {
+                draw_text(6, 1, "Objectifs", 1);
+            }
+
             if (game.game_mode == MODE_STORY && game.mission_id >= 4) {
-                draw_text(3, 4, "Toutes les", 1);
-                draw_text(3, 6, "missions", 1);
-                draw_text(3, 8, "accomplies!", 1);
+                if (game.language == LANG_EN) {
+                    draw_text(3, 4, "All goals", 1);
+                    draw_text(3, 6, "have been", 1);
+                    draw_text(3, 8, "achieved", 1);
+                } else {
+                    draw_text(3, 4, "Toutes les", 1);
+                    draw_text(3, 6, "missions", 1);
+                    draw_text(3, 8, "accomplies", 1);
+                }
             } else if (game.game_mode == MODE_STORY) {
                 MissionStep cur;
                 nb_story_get_current_step_b2(&cur);
-                draw_text(6, 2, "Objectifs", 1);
+                //draw_text(6, 2, "Objectifs", 1);
+                if (game.language == LANG_EN) {
+                    draw_text(8, 1, "Goals", 1);
+                } else {
+                    draw_text(6, 1, "Objectifs", 1);
+                }
                 //draw_text(1, 4, GET_MISSION_TEXT(cur.goal_idx), 1);
                 uint8_t row = 7;
                 uint8_t chk_spr = 1u; // prochain slot sprite pour coche
@@ -356,11 +395,19 @@ while (menu_running) {
 
         else if (stats_page == 5) { // --- PAGE 6 ---
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(5, 1, "Electricit~", 1);
-            draw_text(1, 5, "Produite :", 1);
-            draw_number(15, 5, game.electricity_prod, 1);
-            draw_text(1, 7, "Consomm~e :", 1);
-            draw_number(15, 7, game.electricity_cons, 1);
+            if (game.language == LANG_EN) {
+                draw_text(5, 1, "Electricity", 1);
+                draw_text(1, 5, "Produced :", 1);
+                draw_number(15, 5, game.electricity_prod, 1);
+                draw_text(1, 7, "Consumed :", 1);
+                draw_number(15, 7, game.electricity_cons, 1);
+            } else {
+                draw_text(5, 1, "Electricit~", 1);
+                draw_text(1, 5, "Produite :", 1);
+                draw_number(15, 5, game.electricity_prod, 1);
+                draw_text(1, 7, "Consomm~e :", 1);
+                draw_number(15, 7, game.electricity_cons, 1);
+            }
         }
 
         /*else if (stats_page == 6) { // --- PAGE 7 : REVENUS 1/2 ---
@@ -389,26 +436,46 @@ while (menu_running) {
 
         else if (stats_page == 6) { // --- PAGE 9 : DEPENSES ---
             //draw_text(6, 1, GET_TEXT(TXT_STATS_ALMANACH), 1);
-            draw_text(5, 1, "D~penses", 1);
-            draw_text(1, 5, "Maintenance :", 1);
-            draw_number(15, 5, game.exp_maintenance, 1);
-            draw_text(1, 7, "Salaires :", 1);
-            draw_number(15, 7, game.exp_salaries, 1);
-            draw_text(1, 9, "Construction :", 1);
-            draw_number(15, 9, game.exp_construction, 1);
-            if (game.decree_tram) {
-                draw_text(1, 11, "Tram :", 1);
-                draw_number(15, 11, 1000, 1);
-                draw_text(1, 13, "Total :", 1);
-                draw_number(15, 13, (uint16_t)game.monthly_expenses, 1);
+            if (game.language == LANG_EN) {
+                draw_text(5, 1, "Expenses", 1);
+                draw_text(1, 5, "Maintenance :", 1);
+                draw_number(15, 5, game.exp_maintenance, 1);
+                draw_text(1, 7, "Wages :", 1);
+                draw_number(15, 7, game.exp_salaries, 1);
+                draw_text(1, 9, "Building :", 1);
+                draw_number(15, 9, game.exp_construction, 1);
+                if (game.decree_tram) {
+                    draw_text(1, 11, "Tram :", 1);
+                    draw_number(15, 11, 1000, 1);
+                    draw_text(1, 13, "Total :", 1);
+                    draw_number(15, 13, (uint16_t)game.monthly_expenses, 1);
+                } else {
+                    draw_text(1, 11, "Total :", 1);
+                    draw_number(15, 11, (uint16_t)game.monthly_expenses, 1);
+                }
             } else {
-                draw_text(1, 11, "Total :", 1);
-                draw_number(15, 11, (uint16_t)game.monthly_expenses, 1);
+                draw_text(5, 1, "D~penses", 1);
+                draw_text(1, 5, "Maintenance :", 1);
+                draw_number(15, 5, game.exp_maintenance, 1);
+                draw_text(1, 7, "Salaires :", 1);
+                draw_number(15, 7, game.exp_salaries, 1);
+                draw_text(1, 9, "Construction :", 1);
+                draw_number(15, 9, game.exp_construction, 1);
+                if (game.decree_tram) {
+                    draw_text(1, 11, "Tram :", 1);
+                    draw_number(15, 11, 1000, 1);
+                    draw_text(1, 13, "Total :", 1);
+                    draw_number(15, 13, (uint16_t)game.monthly_expenses, 1);
+                } else {
+                    draw_text(1, 11, "Total :", 1);
+                    draw_number(15, 11, (uint16_t)game.monthly_expenses, 1);
+                }
             }
         }
 
         else if (stats_page == 7) { // --- PAGE 10 : FACTEURS BONHEUR 1 ---
-            draw_text(2, 16, "L/R : page", 1);
+            //draw_text(2, 16, "L/R : page", 1);
+            
             draw_text(2, 1, "Facteurs bonheur", 1);
             draw_text(6, 2, "1/2", 1);
             // Batiments (hap_d stocké directement depuis economy.c)

@@ -22,7 +22,7 @@ static void draw_page0(void) {
         draw_text(1, 5, game.decree_food_for_all ? "  [ON]  -1000/mois" : "  [OFF] -1000/mois", 1);
         draw_text(1, 7, "Feeds citizens who", 1);
         draw_text(1, 8, "lack food", 1);
-        draw_text(1, 14, "A: activate/deact.", 1);
+        draw_text(1, 15, "A: activate/deact.", 1);
     } else {
         draw_text(4, 2, "D~crets 1/3", 1);
         draw_text(2, 4, "Nourriture", 1);
@@ -44,7 +44,7 @@ static void draw_page1(void) {
         draw_text(1, 6, game.decree_tram ? "  [ON]  -1000/mois" : "  [OFF] -1000/mois", 1);
         draw_text(1, 8, "Improves citizen", 1);
         draw_text(1, 9, "happiness", 1);
-        draw_text(1, 14, "A: activate/deact.", 1);
+        draw_text(1, 15, "A: activate/deact.", 1);
     } else {
         draw_text(4, 2, "D~crets 2/3", 1);
         draw_text(2, 4, "Transports", 1);
@@ -65,7 +65,7 @@ static void draw_page2(void) {
         draw_text(1, 5, game.decree_housing ? "  [ON]  -1500/mois" : "  [OFF] -1500/mois", 1);
         draw_text(1, 7, "Reduces homeless", 1);
         draw_text(1, 8, "each month active", 1);
-        draw_text(1, 14, "A: activate/deact.", 1);
+        draw_text(1, 15, "A: activate/deact.", 1);
     } else {
         draw_text(4, 2, "D~crets 3/3", 1);
         draw_text(2, 4, "Logement", 1);
@@ -85,7 +85,7 @@ void decrets_screen(void) {
     clear_entire_window();
     nb_draw_menu_border();
     if (game.language == LANG_EN) {
-        draw_text(1, 16, "Left/Right: page B:back", 1);
+        draw_text(1, 16, "L/R: page   B:back", 1);
     } else {
         draw_text(1, 16, "G/D:page  B:retour", 1);
     }

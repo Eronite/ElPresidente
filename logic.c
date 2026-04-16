@@ -27,12 +27,71 @@ const uint8_t building_mapping[6][4] = {
 };
 
 // Noms des outils indexés par leur ID (TOOL_ROAD=0, TOOL_ERASE=1, etc.) : pour afficher le nom dans le hud
-const char* tool_names[] = {
+//const char* tool_names[20];
+/*const char* tool_names[] = {
     "ROUTE", "EFFACER", "MAISON", "MAGASIN", "USINE",
     "FERME", "PLANTAT.", "CONSERV.", "POLICE", "EGLISE",
     "HOPITAL", "ECOLE", "CENTRALE", "MINE", "PORT",
     "BAR", "DISCO", "NONE", "AMELIOR", "CABANE"
+};*/
+/*if (game.language == LANG_EN) {
+    tool_names[0] = "ROAD",
+    tool_names[1] = "DELETE",
+    tool_names[2] = "HOUSE",
+    tool_names[3] = "MALL",
+    tool_names[4] = "FACTORY",
+    tool_names[5] = "FARM",
+    tool_names[6] = "PLANTAT.",
+    tool_names[7] = "CANNERY",
+    tool_names[8] = "POLICE",
+    tool_names[9] = "CHURCH",
+    tool_names[10] = "HOSPITAL",
+    tool_names[11] = "SCHOOL",
+    tool_names[12] = "POWER",
+    tool_names[13] = "MINE",
+    tool_names[14] = "PORT",
+    tool_names[15] = "BAR",
+    tool_names[16] = "DISCO",
+    tool_names[17] = "NONE",
+    tool_names[18] = "UPGRADE",
+    tool_names[19] = "SHACK"
+} else {
+    tool_names[0] = "ROUTE",
+    tool_names[1] = "SUPPRIMER",
+    tool_names[2] = "MAISON",
+    tool_names[3] = "MAGASINS",
+    tool_names[4] = "USINE",
+    tool_names[5] = "FERME",
+    tool_names[6] = "PLANTAT.",
+    tool_names[7] = "CONSERV.",
+    tool_names[8] = "POLICE",
+    tool_names[9] = "EGLISE",
+    tool_names[10] = "HOPITAL",
+    tool_names[11] = "ECOLE",
+    tool_names[12] = "CENTRALE",
+    tool_names[13] = "MINE",
+    tool_names[14] = "PORT",
+    tool_names[15] = "BAR",
+    tool_names[16] = "DISCO",
+    tool_names[17] = "NONE",
+    tool_names[18] = "AMELIOR.",
+    tool_names[19] = "CABANE"
+}*/
+
+static const char* tool_names_fr[20] = {
+    "ROUTE", "SUPPRIMER", "MAISON", "MAGASINS", "USINE",
+    "FERME", "PLANTAT.", "CONSERV.", "POLICE", "EGLISE",
+    "HOPITAL", "ECOLE", "CENTRALE", "MINE", "PORT",
+    "BAR", "DISCO", "NONE", "AMELIOR.", "CABANE"
 };
+
+static const char* tool_names_en[20] = {
+    "ROAD", "DELETE", "HOUSE", "MALL", "FACTORY",
+    "FARM", "PLANTAT.", "CANNERY", "POLICE", "CHURCH",
+    "HOSPITAL", "SCHOOL", "POWER", "MINE", "PORT",
+    "BAR", "DISCO", "NONE", "UPGRADE", "SHACK"
+};
+
 
 static const uint16_t tool_prices[] = {
     2,    // TOOL_ROAD (0)
@@ -746,6 +805,7 @@ void update_hud() { // fais un peu doublon avec move_cursor (et sont appelés to
             move_win(7, 128);
             draw_hud_money_date(0);
             draw_text(0, 1, "              ", 1); // efface cols 0-13 ligne 1
+            const char** tool_names = (game.language == LANG_EN) ? tool_names_en : tool_names_fr;
             draw_text(0, 1, (char*)tool_names[current_tool], 1);
             uint16_t price = tool_prices[current_tool];
             if (price > 0) {
