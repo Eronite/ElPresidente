@@ -798,6 +798,8 @@ void draw_hud_money_date(uint8_t row) {
 
 void update_hud() { // fais un peu doublon avec move_cursor (et sont appelés tous les 2 dans le main ==> à fusionner)
 
+    draw_text(19, 1, " ", 1); // efface tile parasite bas-droite
+
     if (!is_menu_open) { // cas où on n'est pas dans le choix des batiments
 
         if (current_tool < 17 || current_tool == TOOL_ONETILEHOME) {
@@ -980,7 +982,10 @@ void story_dialogue_animated(uint8_t portrait_id, char *text) {
     for(uint8_t s = 9; s < 40; s++) move_sprite(s, 0, 0);
     load_portrait(portrait_id);
     clear_entire_window();
-    draw_penultimo_large(8, 16);
+    load_lowercase_font();
+    load_menu_tiles();
+    nb_draw_menu_border();
+    draw_penultimo_large(32, 16);
     //draw_text(5, 2, "PENULTIMO:", 1); // TODO: adapter le nom selon portrait_id si besoin
 
     fade_in();
@@ -993,25 +998,28 @@ void story_dialogue_animated(uint8_t portrait_id, char *text) {
             uint8_t word_len = 0;
             uint16_t next = i;
             while (text[next] != ' ' && text[next] != '\n' && text[next] != '\0') { word_len++; next++; }
-            if (cur_x + word_len > 18) needs_new_line = 1;
+            if (cur_x + word_len > 17) needs_new_line = 1;
         }
 
         if (needs_new_line) {
             cur_x = 1; cur_y++; line_count++;
             if (line_count >= 7) {
                 uint8_t blink = 0;
-                animate_penultimo_jaw_bouncing(0, 8, 16);
+                animate_penultimo_jaw_bouncing(0, 32, 16);
                 play_sound_dialogue_next();
                 waitpadup();
                 while(!(joypad() & J_A)) {
                     blink++;
-                    if ((blink / 15) % 2 == 0) draw_text(18, 15, ">", 1);
-                    else draw_text(18, 15, " ", 1);
+                    if ((blink / 15) % 2 == 0) draw_text(17, 15, ">", 1);
+                    else draw_text(17, 15, " ", 1);
                     wait_vbl_done();
                 }
                 waitpadup();
                 clear_entire_window();
-                draw_penultimo_large(8, 16);
+                load_lowercase_font();
+                load_menu_tiles();
+                nb_draw_menu_border();
+                draw_penultimo_large(32, 16);
                 //draw_text(5, 2, "PENULTIMO:", 1);
                 cur_x = 1; cur_y = 6; line_count = 0; skip_anim = 0;
                 if (text[i] == ' ') { i++; continue; }
@@ -1025,8 +1033,8 @@ void story_dialogue_animated(uint8_t portrait_id, char *text) {
             if (joypad() & J_A) skip_anim = 1;
             if (text[i] != ' ' && text[i] != '.' && text[i] != ',' && text[i] != '!' && text[i] != '?') {
                 NR10_REG = 0x00; NR11_REG = 0x81; NR12_REG = 0x42; NR13_REG = 0x50; NR14_REG = 0x86;
-                if ((i % 8) < 4) animate_penultimo_jaw_bouncing(1, 8, 16);
-                else             animate_penultimo_jaw_bouncing(0, 8, 16);
+                if ((i % 8) < 4) animate_penultimo_jaw_bouncing(1, 32, 16);
+                else             animate_penultimo_jaw_bouncing(0, 32, 16);
             }
         }
 
@@ -1045,7 +1053,7 @@ void story_dialogue_animated(uint8_t portrait_id, char *text) {
         cur_x++; i++;
     }
 
-    animate_penultimo_jaw_bouncing(0, 8, 16);
+    animate_penultimo_jaw_bouncing(0, 32, 16);
     //clear_entire_window();
     //draw_text(1, 15, GET_TEXT(TXT_A_TO_START), 1);
     waitpadup();

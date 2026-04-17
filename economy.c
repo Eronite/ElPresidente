@@ -910,12 +910,23 @@ static void draw_upgrade_menu(uint8_t type, uint8_t flags) {
         uint8_t elec_ok = is_power_plant || ec == 0 ||
                           game.electricity_prod >= game.electricity_cons + ec;
 
-        if (applied) draw_text(2, y2, "APPLIQUEE ", 1);
-        else if (game.money < (int32_t)upg_cost(type, slot)) draw_text(2, y2, "INSUFF.$  ", 1);
-        else if (!elec_ok) draw_text(2, y2, "MANQ.ELEC.", 1);
-        else draw_text(2, y2, "DISPONIBLE", 1);
+        if (game.language == LANG_EN) {
+            if (applied) draw_text(2, y2, "APPLIED ", 1);
+            else if (game.money < (int32_t)upg_cost(type, slot)) draw_text(2, y2, "INSUFF.$  ", 1);
+            else if (!elec_ok) draw_text(2, y2, "NEED ELEC.", 1);
+            else draw_text(2, y2, "AVAILABLE", 1);
+        } else {
+            if (applied) draw_text(2, y2, "APPLIQUEE ", 1);
+            else if (game.money < (int32_t)upg_cost(type, slot)) draw_text(2, y2, "INSUFF.$  ", 1);
+            else if (!elec_ok) draw_text(2, y2, "MANQ.ELEC.", 1);
+            else draw_text(2, y2, "DISPONIBLE", 1);
+        }
     }
-    draw_text(1, 6, "A:ACHAT >:INFO B:RET", 1);
+    if (game.language == LANG_EN) {
+        draw_text(1, 6, "A:BUY   >:INFOS", 1);
+    } else {
+        draw_text(1, 6, "A:ACHAT   >:INFOS", 1);
+    }
 }
 
 void show_upgrade_menu(uint8_t bldg_idx) {
@@ -983,9 +994,15 @@ void show_building_context_menu(uint8_t b_idx) {
     // Fonction interne pour dessiner le fond sans le curseur
     clear_entire_window();
     //draw_text(1, 0, "--- OPTIONS ---", 1);
-    draw_text(2, 1, "  VOIR INFOS", 1);
-    draw_text(2, 3, "  AMELIORER", 1);
-    draw_text(2, 5, "B: QUITTER", 1);
+    if (game.language == LANG_EN) {
+        draw_text(2, 1, "  MORE INFOS", 1);
+        draw_text(2, 3, "  UPGRADE", 1);
+        draw_text(2, 5, "B: BACK", 1);
+    } else {
+        draw_text(2, 1, "  VOIR INFOS", 1);
+        draw_text(2, 3, "  AMELIORER", 1);
+        draw_text(2, 5, "B: QUITTER", 1);
+    }
 
     while(menu_running) {
         // --- CURSEUR CHIRURGICAL ---
@@ -1005,9 +1022,18 @@ void show_building_context_menu(uint8_t b_idx) {
             //move_win(7, 104);
             clear_entire_window();
             //draw_text(1, 0, "--- OPTIONS ---", 1);
-            draw_text(2, 1, "  VOIR INFOS", 1);
+            /*draw_text(2, 1, "  VOIR INFOS", 1);
             draw_text(2, 3, "  AMELIORER", 1);
-            draw_text(2, 5, "B: QUITTER", 1);
+            draw_text(2, 5, "B: QUITTER", 1);*/
+            if (game.language == LANG_EN) {
+                draw_text(2, 1, "  MORE INFOS", 1);
+                draw_text(2, 3, "  UPGRADE", 1);
+                draw_text(2, 5, "B: BACK", 1);
+            } else {
+                draw_text(2, 1, "  VOIR INFOS", 1);
+                draw_text(2, 3, "  AMELIORER", 1);
+                draw_text(2, 5, "B: QUITTER", 1);
+            }
         }
 
         if (joy & J_B) { waitpadup(); menu_running = 0; }

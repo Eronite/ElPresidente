@@ -37,7 +37,7 @@ char *mission_strings_fr[] = {
     "Mission 3 termin~e !",
 
     // MTXT_M4_1
-    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas\nfonctionner. M~me la discoth~que\nreste silencieuse.\n\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai stock~",
+    "Presidente ! Votre ile\nprosp~re, mais elle manque\nd'~nergie. Sans ~lectricit~,\nla mine ne peut pas fonctionner.\nM~me la discoth~que\nest silencieuse.\n\nVos objectifs :\n- 1 centrale ~lectrique\n- 1 mine, sur un gisement\n- 200 minerai stock~",
     // MTXT_M4_2
     "Presidente ! Votre ile\nextrait, produit, ~claire !\nLe minerai se vend, les caisses\ngrossissent.\nViva el Presidente !",
     // MGOAL_M4_1
@@ -51,7 +51,7 @@ char *mission_strings_fr[] = {
 // ============================================================
 char *mission_strings_en[] = {
     // MTXT_M1_1
-    "Presidente, our old island\nhas retired due to a minor\ngeological disagreement.\nBut rejoice! The generous\nRonald Dump has gifted us\nthis patch of dirt.\nHe says the previous owner\nno longer needs it.\n\nYour objectives:\n- 3 farms\n- 6000 dollars\n- 25 inhabitants",
+    "Presidente, our old island\nhas retired due to a minor\ngeological disagreement.\n\nBut rejoice!\nThe generous Ronald Dump\nhas gifted us\nthis patch of dirt.\nHe says the previous owner\nno longer needs it.\nYour objectives:\n- 3 farms\n- 6000 dollars\n- 25 inhabitants",
     // MTXT_M1_2
     "Magnificent, Presidente!\nYou have proven that\ncivilization is possible...\neven here.",
     // MGOAL_M1_1
@@ -60,16 +60,16 @@ char *mission_strings_en[] = {
     "Mission 1 complete!",
 
     // MTXT_M2_1
-    "Presidente! Your island\neats, your coffers ring.\nBut the people are bored.\nAnd a bored people thinks.\nDangerous.\nThe church brings happiness.\nAnd so does the bar,\nof course.\n\nYour objectives:\n- 1 church\n- 2 bars\n- 8000 dollars",
+    "Presidente!\nYour island eats,\nyour coffers ring.\nBut the people are bored.\nAnd a bored people thinks.\nDangerous.\nThe church brings happiness.\nAnd so does the bar,\nof course.\n\nYour objectives:\n- 1 church\n- 2 bars\n- 8000 dollars",
     // MTXT_M2_2
-    "Presidente! Your people\npray in the morning\nand drink at night.\nOrder is maintained.\nViva el Presidente!",
+    "Presidente! \nYour people pray\nin the morning and\ndrink at night.\nOrder is maintained.\nViva el Presidente!",
     // MGOAL_M2_1
     "1 church + 2 bars + 8000$",
     // MGOAL_M2_2
     "Mission 2 complete!",
 
     // MTXT_M3_1
-    "Presidente! Your people\nare happy but poorly\neducated. And unsupervised.\nAn educated people obeys\nmore intelligently.\nA watched people obeys\nentirely.\n\nYour objectives:\n- 1 school\n- 2 police stations\n- 50 inhabitants",
+    "Presidente! Your people are\nhappy but poorly\neducated.\nAnd unsupervised.\nAn educated people obeys\nmore intelligently.\nA watched people\nobeys entirely.\n\nYour objectives:\n- 1 school\n- 2 police stations\n- 50 inhabitants",
     // MTXT_M3_2
     "Magnificent !\nEducation, order...\nyour utopia takes shape.\nViva el Presidente!",
     // MGOAL_M3_1
@@ -78,7 +78,7 @@ char *mission_strings_en[] = {
     "Mission 3 complete!",
 
     // MTXT_M4_1
-    "Presidente! Your island\nprospers, but lacks energy.\nWithout electricity, the\nmine cannot function.\nEven the disco stays\nsilent.\n\nYour objectives:\n- 1 power plant\n- 1 mine, on a deposit\n- 200 ore in stock",
+    "Presidente! Your island prospers,\nbut lacks energy.\nWithout electricity, the\nmine cannot function.\nEven the disco\nstays silent.\n\n\n\nYour objectives:\n- 1 power plant\n- 1 mine, on a deposit\n- 200 ore in stock",
     // MTXT_M4_2
     "Presidente! Your island\nextracts, produces, shines!\nThe ore sells, the coffers\ngrow.\nViva el Presidente!",
     // MGOAL_M4_1
